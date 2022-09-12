@@ -294,3 +294,7 @@ class WeChat:
             return 1
         else:
             return 0
+
+    def SavePic(self, savepath=None, filename=None):
+        WxUtils.SavePic()
+        # Pic = uia.WindowControl(ClassName='ImagePreviewWnd', Name='图片查看')
