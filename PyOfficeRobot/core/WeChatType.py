@@ -8,7 +8,7 @@ import win32clipboard as wc
 import time
 import os
 
-AUTHOR_EMAIL = '公众号：程序员晚枫'
+PUBLISH_ID = '公众号：程序员晚枫'
 
 COPYDICT = {}
 
