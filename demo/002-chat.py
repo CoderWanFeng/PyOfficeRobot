@@ -18,7 +18,5 @@ chat_list = wx.GetSessionList()
 # wx.SendMsg(msg)  # 向`文件传输助手`发送消息：你好~
 
 
-wx.ChatWith(who='兆锋')
-while True:
-    msg = wx.GetLastMessage
-    print(msg)
+wx.ChatWith(who='测试群')
+wx.SavePic()
