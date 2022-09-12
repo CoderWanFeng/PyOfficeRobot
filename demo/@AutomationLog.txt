@@ -1,0 +1,2 @@
+2022-09-12 16:24:01.189 WeChatType.py[43] SplitMessage -> Find Control Timeout(0s): {ControlType: ButtonControl}
+2022-09-12 16:24:26.622 WeChatType.py[43] SplitMessage -> Find Control Timeout(0s): {ControlType: ButtonControl}
