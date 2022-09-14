@@ -1,8 +1,11 @@
 from PyOfficeRobot.core.WeChatType import WeChat
+from PyOfficeRobot.lib.CONST import ACT_TYPE
+from PyOfficeRobot.lib.dec.act_dec import act_info
 
 wx = WeChat()
 
 
+@act_info(ACT_TYPE.FILE)
 def send_file(who, file):
     """
     发送任意类型的文件

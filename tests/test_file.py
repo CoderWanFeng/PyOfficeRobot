@@ -1,6 +1,6 @@
 import unittest
 
-from PyOfficeRobot.api.file import send_file
+from PyOfficeRobot.api.file import *
 
 
 class TestFile(unittest.TestCase):
