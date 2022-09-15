@@ -20,12 +20,13 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 ## 2、视频教程
 
 - [001-发送给指定好友](https://www.bilibili.com/video/BV1Xa411u7yU)
+- [002-1行代码，实现聊天机器人](https://www.bilibili.com/video/BV1Jt4y1j7F1)
 
 ## 3、功能Demo
 
 我最近开源了这个库的全部源代码，功能正在开发中，欢迎大家参与开发~
 
-- [Demo](https://github.com/CoderWanFeng/PyOfficeRobot/tree/main/demo)
+- [演示代码](https://github.com/CoderWanFeng/PyOfficeRobot/tree/main/demo)
 
 ---
 
