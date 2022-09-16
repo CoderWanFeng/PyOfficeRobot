@@ -11,3 +11,7 @@ dist/
 *.egg-info
 
 __pycache__
+.idea/PyOfficeRobot.iml
+.idea/misc.xml
+*.iml
+.idea/PyOfficeRobot.iml
