@@ -269,7 +269,7 @@ class WeChat:
     @property
     def GetLastMessage(self):
         '''获取当前窗口中最后一条聊天记录'''
-        uia.SetGlobalSearchTimeout(1.0)
+        uia.SetGlobalSearchTimeout(1.0)  # 每秒更新一次
         MsgItem = self.MsgList.GetChildren()[-1]
         Msg = WxUtils.SplitMessage(MsgItem)
         uia.SetGlobalSearchTimeout(10.0)
