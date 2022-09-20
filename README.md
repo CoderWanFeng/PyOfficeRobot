@@ -19,13 +19,16 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 
 ## 2、视频教程
 
-- [001-项目发布](https://www.bilibili.com/video/BV1Xa411u7yU)
+- 💻[001-项目发布](https://www.bilibili.com/video/BV1Xa411u7yU)
 
 - [002-发消息](https://www.bilibili.com/video/BV1Jt4y1j7F1)
 
 - [003-发文件](https://www.bilibili.com/video/BV1te4y1y7Ro)
 
 - [004-根据关键词，自动回复](https://www.bilibili.com/video/BV1fV4y1M7ju)
+
+- ⭐持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
+
 
 ## 3、功能Demo
 
