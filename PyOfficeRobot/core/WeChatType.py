@@ -12,7 +12,6 @@ PUBLISH_ID = '公众号：程序员晚枫'
 
 COPYDICT = {}
 
-
 class WxParam:
     SYS_TEXT_HEIGHT = 33
     TIME_TEXT_HEIGHT = 34
@@ -117,7 +116,7 @@ class WxUtils:
             units = WxUtils.ClipboardFormats(u, *units)
         return units
 
-    def CopyDict():
+    def CopyDict(self):
         Dict = {}
         for i in WxUtils.ClipboardFormats():
             if i == 0:
@@ -137,11 +136,13 @@ class WxUtils:
 class WeChat:
     def __init__(self):
         self.UiaAPI = uia.WindowControl(ClassName='WeChatMainWndForPC')
+
         self.SessionList = self.UiaAPI.ListControl(Name='会话')
         self.EditMsg = self.UiaAPI.EditControl(Name='输入')
         self.SearchBox = self.UiaAPI.EditControl(Name='搜索')
         self.MsgList = self.UiaAPI.ListControl(Name='消息')
         self.SessionItemList = []
+        self.Group = self.UiaAPI.ButtonControl().Name
 
     def GetSessionList(self, reset=False):
         '''获取当前会话列表，更新会话列表'''
@@ -167,9 +168,9 @@ class WeChat:
         keywords: 要查找的关键词，str   * 最好完整匹配，不完全匹配只会选取搜索框第一个
         '''
         self.UiaAPI.SetFocus()
-        time.sleep(0.2)
-        self.UiaAPI.SendKeys('{Ctrl}f', waitTime=1)
-        self.SearchBox.SendKeys(keyword, waitTime=1.5)
+        time.sleep(0.1)
+        self.UiaAPI.SendKeys('{Ctrl}f{Ctrl}a', waitTime=0.2)
+        self.SearchBox.SendKeys(keyword, waitTime=0.2)
         self.SearchBox.SendKeys('{Enter}')
 
     def ChatWith(self, who, RollTimes=None):
@@ -179,14 +180,14 @@ class WeChat:
         RollTimes : 默认向下滚动多少次，再进行搜索
         '''
         self.UiaAPI.SwitchToThisWindow()
-        RollTimes = 10 if not RollTimes else RollTimes
+        RollTimes = 1 if not RollTimes else RollTimes
 
         def roll_to(who=who, RollTimes=RollTimes):
             for i in range(RollTimes):
                 if who not in self.GetSessionList()[:-1]:
-                    self.SessionList.WheelDown(wheelTimes=3, waitTime=0.1 * i)
+                    self.SessionList.WheelDown(wheelTimes=1, waitTime=0.01 * i)
                 else:
-                    time.sleep(0.5)
+                    time.sleep(0.1)
                     self.SessionList.ListItemControl(Name=who).Click(simulateMove=False)
                     return 1
             return 0
@@ -207,6 +208,14 @@ class WeChat:
         if clear:
             self.EditMsg.SendKeys('{Ctrl}a', waitTime=0)
         self.EditMsg.SendKeys(msg, waitTime=0)
+        self.EditMsg.SendKeys('{Ctrl}{Enter}', waitTime=0)
+
+    def SendEnd(self, clear=False):
+        '''向当前窗口发送消息
+        msg : 要发送的消息
+        clear : 是否清除当前已编辑内容
+        '''
+        self.UiaAPI.SwitchToThisWindow()
         self.EditMsg.SendKeys('{Enter}', waitTime=0)
 
     def SendFiles(self, *filepath, not_exists='ignore'):
@@ -269,11 +278,14 @@ class WeChat:
     @property
     def GetLastMessage(self):
         '''获取当前窗口中最后一条聊天记录'''
-        uia.SetGlobalSearchTimeout(1.0)  # 每秒更新一次
-        MsgItem = self.MsgList.GetChildren()[-1]
-        Msg = WxUtils.SplitMessage(MsgItem)
-        uia.SetGlobalSearchTimeout(10.0)
-        return Msg
+        try:
+            uia.SetGlobalSearchTimeout(1.0)
+            MsgItem = self.MsgList.GetChildren()[-1]
+            ChatName = MsgItem.ButtonControl()  # 聊天对象应当从消息子目录获取
+            uia.SetGlobalSearchTimeout(2.0)
+            return MsgItem.Name, ChatName.Name  # 返回正确的聊天信息和聊天对象
+        except LookupError:
+            pass
 
     def LoadMoreMessage(self, n=0.1):
         '''定位到当前聊天页面，并往上滚动鼠标滚轮，加载更多聊天记录到内存'''
