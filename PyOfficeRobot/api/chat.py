@@ -38,5 +38,8 @@ def chat_by_keywords(who, keywords):
 
                 temp_msg = receive_msg
                 wx.SendMsg(keywords[receive_msg])  # 向`who`发送消息
+            else:
+                temp_msg = receive_msg
+                wx.SendMsg(keywords[receive_msg])  # 向`who`发送消息，向群组发送消息           
         except:
             pass
