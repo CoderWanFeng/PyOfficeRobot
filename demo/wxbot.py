@@ -1,4 +1,4 @@
-from PyOfficeRobot.core.WeChatType import *
+from PR.Dumogu.WeChatType import *
 
 def send_msg(msg):
     """
