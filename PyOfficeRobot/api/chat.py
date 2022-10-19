@@ -1,6 +1,8 @@
 from PyOfficeRobot.core.WeChatType import WeChat
 from PyOfficeRobot.lib.CONST import ACT_TYPE
 from PyOfficeRobot.lib.dec.act_dec import act_info
+import datetime
+import os
 
 wx = WeChat()
 
@@ -40,3 +42,23 @@ def chat_by_keywords(who, keywords):
                 wx.SendMsg(keywords[receive_msg])  # 向`who`发送消息
         except:
             pass
+
+
+def receive_message(who='文件传输助手', txt='userMessage.txt', output_path='./'):
+    wx.GetSessionList()  # 获取会话列表
+    wx.ChatWith(who)  # 打开`who`聊天窗口
+    while True:
+        friend_name, receive_msg = wx.GetAllMessage[-1][0], wx.GetAllMessage[-1][1]  # 获取朋友的名字、发送的信息
+        current_time = datetime.datetime.now()
+        cut_line = '^^^----------^^^'
+        print('--' * 88)
+        with open(os.path.join(output_path, txt), 'a+') as output_file:
+            output_file.write('\n')
+            output_file.write(cut_line)
+            output_file.write('\n')
+            output_file.write(str(current_time))
+            output_file.write('\n')
+            output_file.write(str(friend_name))
+            output_file.write('\n')
+            output_file.write(str(receive_msg))
+            output_file.write('\n')
