@@ -38,4 +38,5 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 
 ---
 
-![](https://www.python-office.com/api/img-cdn/python-office/find_excel_data/group.jpg)
+![](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg)
+
