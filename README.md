@@ -9,31 +9,23 @@
 
 <p align="center" name="'github">
     <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/stars/CoderWanFeng/python-office.svg?style=social" alt="github star"/>
+    <img src="https://img.shields.io/github/stars/CoderWanFeng//PyOfficeRobot.svg?style=social" alt="github star"/>
     </a>
     <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/contributors/CoderWanFeng/python-office" alt="github contributors"/>
+    <img src="https://img.shields.io/github/contributors/CoderWanFeng//PyOfficeRobot" alt="github contributors"/>
     </a>
     <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/forks/CoderWanFeng/python-office" alt="github forks"/>
+    <img src="https://img.shields.io/github/forks/CoderWanFeng//PyOfficeRobot" alt="github forks"/>
     </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/issues/CoderWanFeng/python-office" alt="github issues"/>
-    </a>	
-    <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/issues-pr/CoderWanFeng/python-office" alt="github license"/>
-    </a>
-    <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/license/CoderWanFeng/python-office" alt="github license"/>
-    </a>   
+
 </p>
 
 <p align="center" name="gitee">
-	<a target="_blank" href='https://gitee.com/CoderWanFeng/python-office/'>
-		<img src='https://gitee.com/CoderWanFeng/python-office/badge/star.svg?theme=dark' alt='gitee star'/>
+	<a target="_blank" href='https://gitee.com/CoderWanFeng//PyOfficeRobot/'>
+		<img src='https://gitee.com/CoderWanFeng//PyOfficeRobot/badge/star.svg?theme=dark' alt='gitee star'/>
 	</a>
 	<a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-		<img src="https://gitee.com/CoderWanFeng/python-office/badge/fork.svg?theme=dark" alt="gitee fork"/>
+		<img src="https://gitee.com/CoderWanFeng//PyOfficeRobot/badge/fork.svg?theme=dark" alt="gitee fork"/>
 	</a>
 	<a target="_blank" href="http://www.python4office.cn/images/qq.jpg">
 	<img src="https://img.shields.io/badge/QQ-1090738447-orange"/></a>
