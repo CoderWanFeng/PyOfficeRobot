@@ -9,13 +9,13 @@
 
 <p align="center" name="'github">
     <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/stars/CoderWanFeng//PyOfficeRobot.svg?style=social" alt="github star"/>
+    <img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg?style=social" alt="github star"/>
     </a>
     <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/contributors/CoderWanFeng//PyOfficeRobot" alt="github contributors"/>
+    <img src="https://img.shields.io/github/contributors/CoderWanFeng/PyOfficeRobot" alt="github contributors"/>
     </a>
     <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-    <img src="https://img.shields.io/github/forks/CoderWanFeng//PyOfficeRobot" alt="github forks"/>
+    <img src="https://img.shields.io/github/forks/CoderWanFeng/PyOfficeRobot" alt="github forks"/>
     </a>
 
 </p>
