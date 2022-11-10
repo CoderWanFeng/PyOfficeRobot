@@ -1,3 +1,5 @@
+import schedule
+
 from PyOfficeRobot.core.WeChatType import WeChat
 from PyOfficeRobot.lib.CONST import ACT_TYPE
 from PyOfficeRobot.lib.dec.act_dec import act_info
@@ -62,3 +64,11 @@ def receive_message(who='文件传输助手', txt='userMessage.txt', output_path
             output_file.write('\n')
             output_file.write(str(receive_msg))
             output_file.write('\n')
+
+
+def send_message_by_time(who, message, time):
+    schedule.every().day.at(time).do(send_message(who, message))
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+

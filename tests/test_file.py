@@ -17,3 +17,6 @@ class TestFile(unittest.TestCase):
 
     def test_receive_message(self):
         receive_message(who='程序员晚枫')
+
+    def test_sm_by_time(self):
+        send_message_by_time(who='每天进步一点点', message='你好', time='17:38')
