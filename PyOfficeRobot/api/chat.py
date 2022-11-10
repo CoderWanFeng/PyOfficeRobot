@@ -67,8 +67,6 @@ def receive_message(who='文件传输助手', txt='userMessage.txt', output_path
 
 
 def send_message_by_time(who, message, time):
-    schedule.every().day.at(time).do(send_message(who, message))
+    schedule.every().day.at(time).do(send_message, who=who, message=message)
     while True:
         schedule.run_pending()
-        time.sleep(1)
-
