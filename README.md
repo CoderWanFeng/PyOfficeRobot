@@ -1,4 +1,8 @@
-
+<p align="center">
+    <a target="_blank" href='https://url.cn/Z4lzPLaF'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/ads%2F1040x100-tencent.jpg" width="100%"/>
+    </a>   
+</p>
 <p align="center">
 	👉 <a target="_blank" href="https://www.python-office.com/office/robot.html">项目官网</a> 👈
 </p>
