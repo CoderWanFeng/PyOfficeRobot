@@ -27,14 +27,6 @@
 
 </p>
 
-<p align="center" name="gitee">
-
-	<a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
-		<img src="https://gitee.com/CoderWanFeng//PyOfficeRobot/badge/fork.svg?theme=dark" alt="gitee fork"/>
-	</a>
-	<a target="_blank" href="http://www.python4office.cn/images/qq.jpg">
-	<img src="https://img.shields.io/badge/QQ-1090738447-orange"/></a>
-</p>
 
 
 
