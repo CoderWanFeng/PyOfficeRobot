@@ -75,3 +75,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 
 ![](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg)
 
+
+## ⭐Star python-office
+
+[![Stargazers over time](https://starchart.cc/CoderWanFeng/PyOfficeRobot.svg)](https://starchart.cc/CoderWanFeng/PyOfficeRobot)
