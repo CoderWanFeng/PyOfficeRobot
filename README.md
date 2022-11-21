@@ -76,6 +76,41 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 ![](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg)
 
 
-## ⭐Star python-office
+## ⭐Star 
 
 [![Stargazers over time](https://starchart.cc/CoderWanFeng/PyOfficeRobot.svg)](https://starchart.cc/CoderWanFeng/PyOfficeRobot)
+
+
+## 📕拓展资料
+
+
+<p align="center" id='30讲自动化办公-banner'>
+    <a target="_blank" href='http://gk.link/a/10E3B'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fauto-work.jpg" width="100%"/>
+    </a>   
+</p>
+
+<p align="center" id='100本电子书-banner'>
+    <a target="_blank" href='https://mp.weixin.qq.com/s/H3us6_7wg2QspGZfGtfDZw'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Febook.jpg" width="100%"/>
+    </a>   
+</p>
+
+<p align="center" id='实战项目-banner'>
+    <a target="_blank" href='http://www.python4office.cn/python-project-list/'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fproject.jpg" width="100%"/>
+    </a>   
+</p>
+
+<p align="center" id='11个软件-banner'>
+    <a target="_blank" href='https://mp.weixin.qq.com/s/uE1M8ESBQ3wJ_q-Cl1aNvg'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fsoft-11.jpg" width="100%"/>
+    </a>   
+</p>
+
+
+<p align="center" id='25个学习资源-banner'>
+    <a target="_blank" href='https://mp.weixin.qq.com/s/_01V8I7rVkgvIIo7ygwwQA'>
+    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fpy-25-source.jpg" width="100%"/>
+    </a>   
+</p>
