@@ -1,312 +1,214 @@
 # -*-coding:utf-8-*-
 # sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='gb18030')
 
-
 import uiautomation as uia
 import win32gui, win32con
 import win32clipboard as wc
 import time
 import os
 
-PUBLISH_ID = '公众号：程序员晚枫'
-
-COPYDICT = {}
-
-class WxParam:
-    SYS_TEXT_HEIGHT = 33
-    TIME_TEXT_HEIGHT = 34
-    RECALL_TEXT_HEIGHT = 45
-    CHAT_TEXT_HEIGHT = 52
-    CHAT_IMG_HEIGHT = 117
-    SpecialTypes = ['[文件]', '[图片]', '[视频]', '[音乐]', '[链接]']
-
-
-class WxUtils:
-    def SplitMessage(MsgItem):
-        uia.SetGlobalSearchTimeout(0)
-        MsgItemName = MsgItem.Name
-        if MsgItem.BoundingRectangle.height() == WxParam.SYS_TEXT_HEIGHT:
-            Msg = ('SYS', MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
-        elif MsgItem.BoundingRectangle.height() == WxParam.TIME_TEXT_HEIGHT:
-            Msg = ('Time', MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
-        elif MsgItem.BoundingRectangle.height() == WxParam.RECALL_TEXT_HEIGHT:
-            if '撤回' in MsgItemName:
-                Msg = ('Recall', MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
-            else:
-                Msg = ('SYS', MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
-        else:
-            Index = 1
-            User = MsgItem.ButtonControl(foundIndex=Index)
-            try:
-                while True:
-                    if User.Name == '':
-                        Index += 1
-                        User = MsgItem.ButtonControl(foundIndex=Index)
-                    else:
-                        break
-                Msg = (User.Name, MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
-            except:
-                Msg = ('SYS', MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
-        uia.SetGlobalSearchTimeout(10.0)
-        return Msg
-
-    def SetClipboard(data, dtype='text'):
-        '''复制文本信息或图片到剪贴板
-        data : 要复制的内容，str 或 Image 图像'''
-        if dtype.upper() == 'TEXT':
-            type_data = win32con.CF_UNICODETEXT
-        elif dtype.upper() == 'IMAGE':
-            from io import BytesIO
-            type_data = win32con.CF_DIB
-            output = BytesIO()
-            data.save(output, 'BMP')
-            data = output.getvalue()[14:]
-        else:
-            raise ValueError('param (dtype) only "text" or "image" supported')
-        wc.OpenClipboard()
-        wc.EmptyClipboard()
-        wc.SetClipboardData(type_data, data)
-        wc.CloseClipboard()
-
-    def Screenshot(hwnd, to_clipboard=True):
-        '''为句柄为hwnd的窗口程序截图
-        hwnd : 句柄
-        to_clipboard : 是否复制到剪贴板
-        '''
-        import pyscreenshot as shot
-        bbox = win32gui.GetWindowRect(hwnd)
-        win32gui.SetWindowPos(hwnd, win32con.HWND_TOPMOST, 0, 0, 0, 0, \
-                              win32con.SWP_SHOWWINDOW | win32con.SWP_NOMOVE | win32con.SWP_NOSIZE)
-        win32gui.SetWindowPos(hwnd, win32con.HWND_NOTOPMOST, 0, 0, 0, 0, \
-                              win32con.SWP_SHOWWINDOW | win32con.SWP_NOMOVE | win32con.SWP_NOSIZE)
-        win32gui.BringWindowToTop(hwnd)
-        im = shot.grab(bbox)
-        if to_clipboard:
-            WxUtils.SetClipboard(im, 'image')
-        return im
-
-    def SavePic(savepath=None, filename=None):
-        Pic = uia.WindowControl(ClassName='ImagePreviewWnd', Name='图片查看')
-        Pic.SendKeys('{Ctrl}s')
-        SaveAs = Pic.WindowControl(ClassName='#32770', Name='另存为...')
-        SaveAsEdit = SaveAs.EditControl(ClassName='Edit', Name='文件名:')
-        SaveButton = Pic.ButtonControl(ClassName='Button', Name='保存(S)')
-        PicName, Ex = os.path.splitext(SaveAsEdit.GetValuePattern().Value)
-        if not savepath:
-            savepath = os.getcwd()
-        if not filename:
-            filename = PicName
-        FilePath = os.path.realpath(os.path.join(savepath, filename + Ex))
-        SaveAsEdit.SendKeys(FilePath)
-        SaveButton.Click()
-        Pic.SendKeys('{Esc}')
-
-    def ControlSize(control):
-        locate = control.BoundingRectangle
-        size = (locate.width(), locate.height())
-        return size
-
-    def ClipboardFormats(unit=0, *units):
-        units = list(units)
-        wc.OpenClipboard()
-        u = wc.EnumClipboardFormats(unit)
-        wc.CloseClipboard()
-        units.append(u)
-        if u:
-            units = WxUtils.ClipboardFormats(u, *units)
-        return units
-
-    def CopyDict(self):
-        Dict = {}
-        for i in WxUtils.ClipboardFormats():
-            if i == 0:
-                continue
-            wc.OpenClipboard()
-            try:
-                content = wc.GetClipboardData(i)
-                wc.CloseClipboard()
-            except:
-                wc.CloseClipboard()
-                raise ValueError
-            if len(str(i)) >= 4:
-                Dict[str(i)] = content
-        return Dict
+def SavePic(savepath=None, filename: str = None) -> object:
+    Pic = uia.WindowControl(ClassName='ImagePreviewWnd', Name='图片查看')
+    Pic.SendKeys('{Ctrl}s')
+    SaveAs = Pic.WindowControl(ClassName='#32770', Name='另存为...')
+    SaveAsEdit = SaveAs.EditControl(ClassName='Edit', Name='文件名:')
+    SaveButton = Pic.ButtonControl(ClassName='Button', Name='保存(S)')
+    PicName, Ex = os.path.splitext(SaveAsEdit.GetValuePattern().Value)
+    if not savepath:
+        savepath = os.getcwd()
+    if not filename:
+        filename = PicName
+    FilePath = os.path.realpath(os.path.join(savepath, filename + Ex))
+    SaveAsEdit.SendKeys(FilePath)
+    SaveButton.Click()
+    Pic.SendKeys('{Esc}')
 
 
 class WeChat:
     def __init__(self):
+        # 主要窗体
+        uia.PaneControl(Name='任务栏').ButtonControl(Name='微信').Click()  # 启动微信
+        self.sema = threading.BoundedSemaphore(1)
         self.UiaAPI = uia.WindowControl(ClassName='WeChatMainWndForPC')
 
-        self.SessionList = self.UiaAPI.ListControl(Name='会话')
+        self.ChatList = self.UiaAPI.ListControl(Name='会话')
         self.EditMsg = self.UiaAPI.EditControl(Name='输入')
         self.SearchBox = self.UiaAPI.EditControl(Name='搜索')
         self.MsgList = self.UiaAPI.ListControl(Name='消息')
-        self.SessionItemList = []
-        self.Group = self.UiaAPI.ButtonControl().Name
+        self.SelfName = self.UiaAPI.ButtonControl(searchDepth=4).Name
+        # 必须处于界面可视化方可自动化
+        # self.MaxWind = self.UiaAPI.ButtonControl(Name='最大化')
+        # self.MinWind = self.UiaAPI.ButtonControl(Name='最小化')
+        self.Chats = self.UiaAPI.ButtonControl(Name='聊天')
+        self.Tongxunlu = self.UiaAPI.ButtonControl(Name='通讯录')
 
-    def GetSessionList(self, reset=False):
-        '''获取当前会话列表，更新会话列表'''
-        self.SessionItem = self.SessionList.ListItemControl()
-        SessionList = []
-        if reset:
-            self.SessionItemList = []
-        for i in range(100):
+    def GetContacts(self, end_name, rang=2, times=1000, wheels=4, wait=0):
+        contacts = []
+        no_list = ['', '新的朋友', '公众号', '微信团队', '文件助手']
+        self.UiaAPI.SwitchToThisWindow()  # 找到微信窗口
+        self.Tongxunlu.Click()
+        contact_list = self.UiaAPI.ListControl(Name='联系人')
+        item = contact_list.ListItemControl()
+        for x in range(rang):
+            for i in range(times):
+                try:
+                    name = item.Name  # 返回会话列表名称
+                    if (name not in contacts) and (name not in no_list):
+                        contacts.append(name)
+                    elif name == end_name:
+                        break
+                except Exception as ex:
+                    contact_list.WheelDown(wheelTimes=wheels, waitTime=wait)
+                    item = contact_list.GetFirstChildControl()
+                    None if 'Name' in ex.args[0] else None
+                if item:
+                    item = item.GetNextSiblingControl()
+            for i in range(times):
+                try:
+                    name = item.Name  # 返回会话列表名称
+                    if (name not in contacts) and (name not in no_list):
+                        contacts.append(name)
+                    elif name == '新的朋友':
+                        break
+                except Exception as ex:
+                    contact_list.WheelUp(wheelTimes=wheels + 1, waitTime=wait)
+                    item = contact_list.GetLastChildControl()
+                    None if 'Name' in ex.args[0] else None
+                if item:
+                    item = item.GetPreviousSiblingControl()
+        self.Chats.Click()
+        return contacts
+
+    def GetChatList(self):
+        """获取当前会话列表，更新会话列表"""
+        item = self.ChatList.ListItemControl()
+        temp_chat_list = []
+        for i in range(20):
             try:
-                name = self.SessionItem.Name
+                name = item.Name  # 返回会话列表名称
             except:
                 break
-            if name not in self.SessionItemList:
-                self.SessionItemList.append(name)
-            if name not in SessionList:
-                SessionList.append(name)
-            self.SessionItem = self.SessionItem.GetNextSiblingControl()
-        return SessionList
+            if name not in temp_chat_list:
+                temp_chat_list.append(name)
+            item = item.GetNextSiblingControl()  # ???
+        return temp_chat_list
 
     def Search(self, keyword):
-        '''
-        查找微信好友或关键词
-        keywords: 要查找的关键词，str   * 最好完整匹配，不完全匹配只会选取搜索框第一个
-        '''
-        self.UiaAPI.SetFocus()
-        time.sleep(0.1)
-        self.UiaAPI.SendKeys('{Ctrl}f{Ctrl}a', waitTime=0.2)
-        self.SearchBox.SendKeys(keyword, waitTime=0.2)
+        """查找微信好友或关键词"""
+        self.UiaAPI.SetFocus()  # 找到微信窗口
+        time.sleep(0.5)
+        self.UiaAPI.SendKeys('{Ctrl}f{Ctrl}a', waitTime=0.5)
+        self.SearchBox.SendKeys(keyword, waitTime=0.5)
         self.SearchBox.SendKeys('{Enter}')
 
-    def ChatWith(self, who, RollTimes=None):
-        '''
-        打开某个聊天框
-        who : 要打开的聊天框好友名，str;  * 最好完整匹配，不完全匹配只会选取搜索框第一个
-        RollTimes : 默认向下滚动多少次，再进行搜索
-        '''
+    def ChatWith(self, who):
+        """打开某个聊天框
+        who : 要打开的聊天框好友名，str;"""
         self.UiaAPI.SwitchToThisWindow()
-        RollTimes = 1 if not RollTimes else RollTimes
-
-        def roll_to(who=who, RollTimes=RollTimes):
-            for i in range(RollTimes):
-                if who not in self.GetSessionList()[:-1]:
-                    self.SessionList.WheelDown(wheelTimes=1, waitTime=0.01 * i)
-                else:
-                    time.sleep(0.1)
-                    self.SessionList.ListItemControl(Name=who).Click(simulateMove=False)
-                    return 1
-            return 0
-
-        rollresult = roll_to()
-        if rollresult:
-            return 1
+        if who in self.GetChatList()[:-1]:
+            self.ChatList.ListItemControl(Name=who).Click(simulateMove=False)
         else:
             self.Search(who)
-            return roll_to(RollTimes=1)
+            self.ChatList.ListItemControl().GetFirstChildControl().Click(simulateMove=False)
 
-    def SendMsg(self, msg, clear=True):
-        '''向当前窗口发送消息
+    def SendMsg(self, msg, clear=False):
+        """向当前窗口发送消息
         msg : 要发送的消息
         clear : 是否清除当前已编辑内容
-        '''
+        基本已弃用，主要是传递快捷键操作"""
         self.UiaAPI.SwitchToThisWindow()
         if clear:
             self.EditMsg.SendKeys('{Ctrl}a', waitTime=0)
         self.EditMsg.SendKeys(msg, waitTime=0)
-        self.EditMsg.SendKeys('{Ctrl}{Enter}', waitTime=0)
 
-    def SendEnd(self, clear=False):
-        '''向当前窗口发送消息
-        msg : 要发送的消息
-        clear : 是否清除当前已编辑内容
-        '''
+    def SendEnd(self):
         self.UiaAPI.SwitchToThisWindow()
         self.EditMsg.SendKeys('{Enter}', waitTime=0)
 
-    def SendFiles(self, *filepath, not_exists='ignore'):
-        """向当前聊天窗口发送文件
-        not_exists: 如果未找到指定文件，继续或终止程序
-        *filepath: 要复制文件的绝对路径"""
-        global COPYDICT
-        key = ''
-        for file in filepath:
-            file = os.path.realpath(file)
-            if not os.path.exists(file):
-                if not_exists.upper() == 'IGNORE':
-                    print('File not exists:', file)
-                    continue
-                elif not_exists.upper() == 'RAISE':
-                    raise FileExistsError('File Not Exists: %s' % file)
-                else:
-                    raise ValueError('param not_exists only "ignore" or "raise" supported')
-            key += '<EditElement type="3" filepath="%s" shortcut="" />' % file
-        if not key:
-            return 0
-        if not COPYDICT:
-            self.EditMsg.SendKeys(' ', waitTime=0)
-            self.EditMsg.SendKeys('{Ctrl}a', waitTime=0)
-            self.EditMsg.SendKeys('{Ctrl}c', waitTime=0)
-            self.EditMsg.SendKeys('{Delete}', waitTime=0)
-            while True:
-                try:
-                    COPYDICT = WxUtils.CopyDict()
-                    break
-                except:
-                    pass
-        wc.OpenClipboard()
-        wc.EmptyClipboard()
-        wc.SetClipboardData(13, '')
-        wc.SetClipboardData(16, b'\x04\x08\x00\x00')
-        wc.SetClipboardData(1, b'')
-        wc.SetClipboardData(7, b'')
-        for i in COPYDICT:
-            copydata = COPYDICT[i].replace(b'<EditElement type="0" pasteType="0"><![CDATA[ ]]></EditElement>',
-                                           key.encode()).replace(b'type="0"', b'type="3"')
-            wc.SetClipboardData(int(i), copydata)
-        wc.CloseClipboard()
-        self.SendClipboard()
-        return 1
+    def split_msg(self, msgs):
+        """分析消息列表，返回（消息，发消息人，聊天对象），聊天对象可能是群聊名字"""
+        try:
+            uia.SetGlobalSearchTimeout(0.5)
+            if self.UiaAPI.PaneControl(searchDepth=1, foundIndex=2).Name != "":
+                talk = self.UiaAPI.PaneControl(searchDepth=1, foundIndex=3).PaneControl(searchDepth=1, foundIndex=2)
+            else:
+                talk = self.UiaAPI.PaneControl(searchDepth=1, foundIndex=2).PaneControl(searchDepth=1, foundIndex=2)
+            talk = talk.PaneControl(searchDepth=1, foundIndex=3).ButtonControl(RuntimeId='[2A.780632.4.15A]', foundIndex=1).Name
+            uia.SetGlobalSearchTimeout(0.5)
+        except Exception as ex:
+            talk = '' if ex.args else ''
+        chat = msgs.ButtonControl(searchDepth=2)  # 聊天对象应当从消息子目录获取
 
-    def SendClipboard(self):
-        '''向当前聊天页面发送剪贴板复制的内容'''
-        self.SendMsg('{Ctrl}v')
+        if msgs.Name not in ['[图片]', '[文件]', '[音乐]', '[名片]']:
+            msg = msgs.Name
+            msg = "https://" + msg if 'www.' in msg[:4] and 'http' not in msg else msg
+            try:
+                chat = chat.Name
+            except Exception as ex:
+                chat = '系统' if ex.args else ''
+        elif msgs.Name == '[名片]':
+            card = msgs.TextControl()
+            msg = f'{msgs.Name} {card.Name}'
+            chat = chat.Name
+        elif msgs.Name == '[文件]':
+            chat = chat.Name
+            if chat != self.SelfName:
+                text = msgs.TextControl(foundIndex=2)
+                size = msgs.TextControl(foundIndex=3)
+            else:
+                text = msgs.TextControl(foundIndex=1)
+                size = msgs.TextControl(foundIndex=2)
+                # print(text,size)
+            if text:
+                msg = f'{msgs.Name} ({size.Name}) {text.Name}'
+        elif msgs.Name == '[音乐]':
+            auth = msgs.TextControl(searchDepth=9)
+            music = msgs.EditControl(searchDepth=9)
+            if music:
+                msg = f'{msgs.Name} {auth.Name}-->{music.Name}'
+                chat = chat.Name
+        elif "撤回了一条消息" in msgs.Name:
+            chat = msgs.Name.replace("撤回了一条消息", '').replace("\"", '').strip()
+            msg = f'[撤回消息]'
+        elif msgs.Name == '[图片]':
+            self.sema.acquire()
+            try:
+                SavePic()
+            except Exception as ex:
+                ex.args
+            self.sema.release()
+            msg = '[图片]'
+            chat = chat.Name
+        else:
+            chat = chat.Name
+            msg = msgs.EditControl().Name
+        return msg, chat, talk  # 返回正确的聊天信息和聊天对象
 
     @property
     def GetAllMessage(self):
-        '''获取当前窗口中加载的所有聊天记录'''
-        MsgDocker = []
-        MsgItems = self.MsgList.GetChildren()
-        for MsgItem in MsgItems:
-            MsgDocker.append(WxUtils.SplitMessage(MsgItem))
-        return MsgDocker
+        """获取当前窗口中加载的所有聊天记录"""
+        all_msg = []
+        MsgItems = self.MsgList.GetChildren()[1:]
+        count = 0
+        lens = len(MsgItems)
+        for msgs in MsgItems:
+            count += 1
+            print(f'\r全部聊天记录获取进度：[{count}/{lens}]...', flush=True, end='')
+            all_msg.append(self.split_msg(msgs))
+        print('')
+        return all_msg
 
     @property
     def GetLastMessage(self):
-        '''获取当前窗口中最后一条聊天记录'''
+        """获取当前窗口中最后一条聊天记录"""
         try:
-            uia.SetGlobalSearchTimeout(1.0)
-            MsgItem = self.MsgList.GetChildren()[-1]
-            ChatName = MsgItem.ButtonControl()  # 聊天对象应当从消息子目录获取
-            uia.SetGlobalSearchTimeout(2.0)
-            return MsgItem.Name, ChatName.Name  # 返回正确的聊天信息和聊天对象
+            uia.SetGlobalSearchTimeout(0.5)
+            msgs = self.MsgList.GetChildren()[-1]  # todo
+            return self.split_msg(msgs)
         except LookupError:
             pass
 
-    def LoadMoreMessage(self, n=0.1):
-        '''定位到当前聊天页面，并往上滚动鼠标滚轮，加载更多聊天记录到内存'''
-        n = 0.1 if n < 0.1 else 1 if n > 1 else n
-        self.MsgList.WheelUp(wheelTimes=int(500 * n), waitTime=0.1)
-
-    def SendScreenshot(self, name=None, classname=None):
-        '''发送某个桌面程序的截图，如：微信、记事本...
-        name : 要发送的桌面程序名字，如：微信
-        classname : 要发送的桌面程序类别名，一般配合 spy 小工具使用，以获取类名，如：微信的类名为 WeChatMainWndForPC'''
-        if name and classname:
-            return 0
-        else:
-            hwnd = win32gui.FindWindow(classname, name)
-        if hwnd:
-            WxUtils.Screenshot(hwnd)
-            self.SendClipboard()
-            return 1
-        else:
-            return 0
-
-    def SavePic(self, savepath=None, filename=None):
-        WxUtils.SavePic()
-        # Pic = uia.WindowControl(ClassName='ImagePreviewWnd', Name='图片查看')
+    @property
+    def LoadMoreMessage(self):
+        """定位到当前聊天页面，并往上滚动鼠标滚轮，加载更多聊天记录到内存"""
+        self.MsgList.WheelUp(wheelTimes=100, waitTime=0.1)
