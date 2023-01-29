@@ -63,7 +63,11 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 
 - [005-定时发送](https://www.bilibili.com/video/BV1m8411b7LZ)
 
-- ⭐持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
+- [006-自己加功能](https://www.bilibili.com/video/BV14R4y127h6)
+
+- ⭐[007-独立使用](https://www.bilibili.com/video/BV1SY411y7Uh)
+
+- 持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
 
 
 ## 3、功能Demo
