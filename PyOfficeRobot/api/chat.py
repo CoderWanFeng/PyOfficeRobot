@@ -1,15 +1,15 @@
 import schedule
 
 from PyOfficeRobot.core.WeChatType import WeChat
-from PyOfficeRobot.lib.CONST import ACT_TYPE
-from PyOfficeRobot.lib.dec.act_dec import act_info
 import datetime
 import os
 
+from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
+
 wx = WeChat()
 
-
-@act_info(ACT_TYPE.MESSAGE)
+# @act_info(ACT_TYPE.MESSAGE)
+@instruction
 def send_message(who, message):
     """
     给指定人，发送一条消息
@@ -24,7 +24,7 @@ def send_message(who, message):
     # for i in range(10):
     wx.SendMsg(message)  # 向`文件传输助手`发送消息：你好~
 
-
+@instruction
 def chat_by_keywords(who, keywords):
     wx.GetSessionList()  # 获取会话列表
     wx.ChatWith(who)  # 打开`who`聊天窗口
@@ -45,7 +45,7 @@ def chat_by_keywords(who, keywords):
         except:
             pass
 
-
+@instruction
 def receive_message(who='文件传输助手', txt='userMessage.txt', output_path='./'):
     wx.GetSessionList()  # 获取会话列表
     wx.ChatWith(who)  # 打开`who`聊天窗口
@@ -65,7 +65,7 @@ def receive_message(who='文件传输助手', txt='userMessage.txt', output_path
             output_file.write(str(receive_msg))
             output_file.write('\n')
 
-
+@instruction
 def send_message_by_time(who, message, time):
     schedule.every().day.at(time).do(send_message, who=who, message=message)
     while True:
