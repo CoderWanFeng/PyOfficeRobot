@@ -53,19 +53,27 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 
 ## 2、视频教程
 
-- 💻[001-项目发布](https://www.bilibili.com/video/BV1Xa411u7yU)
+- 🔥[001-项目发布](https://www.bilibili.com/video/BV1Xa411u7yU)
 
-- [002-发消息](https://www.bilibili.com/video/BV1Jt4y1j7F1)
+- [002-自动发消息](https://www.bilibili.com/video/BV1Jt4y1j7F1)
 
-- [003-发文件](https://www.bilibili.com/video/BV1te4y1y7Ro)
+- [003-自动发文件](https://www.bilibili.com/video/BV1te4y1y7Ro)
 
 - [004-根据关键词，自动回复](https://www.bilibili.com/video/BV1fV4y1M7ju)
 
-- [005-定时发送](https://www.bilibili.com/video/BV1m8411b7LZ)
+- [⌚005-24小时，后台运行](https://www.bilibili.com/video/BV11L411L7oi)
 
-- [006-自己加功能](https://www.bilibili.com/video/BV14R4y127h6)
+- [⌚006-定时自动发消息](https://www.bilibili.com/video/BV1m8411b7LZ)
 
-- ⭐[007-独立使用](https://www.bilibili.com/video/BV1SY411y7Uh)
+- [007-自己加功能](https://www.bilibili.com/video/BV14R4y127h6)
+
+- ⭐[008-独立使用](https://www.bilibili.com/video/BV1SY411y7Uh)
+
+- ⭐[009-ChatGPT版本](https://www.bilibili.com/video/BV1Dx4y157qy/)
+
+- ⭐[010-机器人.exe](https://www.bilibili.com/video/BV1Q64y1Z7TB/)
+
+- 🤖[011-收集群信息.exe](http://python4office.cn/PyOfficeRobot/get-group-list-001)
 
 - 持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
 
