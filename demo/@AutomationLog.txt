@@ -2,3 +2,4 @@
 2022-09-12 16:24:26.622 WeChatType.py[43] SplitMessage -> Find Control Timeout(0s): {ControlType: ButtonControl}
 2022-09-12 16:58:40.708 WeChatType.py[91] SavePic -> Find Control Timeout(10s): {ClassName: 'ImagePreviewWnd', Name: '图片查看', ControlType: WindowControl}
 2023-02-13 21:39:05.411 WeChatType.py[154] GetSessionList -> Find Control Timeout(10s): {ControlType: ListItemControl}
+2023-02-23 20:49:39.276 07-getList.py[42] <module> -> Find Control Timeout(2s): {Name: '群聊名称', ControlType: TextControl}
