@@ -49,8 +49,8 @@ def get_group_list():
 
     ### 点击下拉菜单按钮"查看更多" 如果群里人数少这个按钮可能不存在
     more_button = wechat_win.ButtonControl(Name="查看更多")
-    if more_button.Exists():
-        more_button.Click(simulateMove=False, waitTime=0.5)
+    if more_button.Exists(0, 0):
+        more_button.Click(0, 0, simulateMove=False)
 
     ### 获取"群聊名称"   先定位"群聊名称",再获取下一个兄弟节点,再获取第一个子节点,.Name取出里面的文字
     group_name = wechat_win.TextControl(Name="群聊名称").GetNextSiblingControl().GetFirstChildControl().Name
@@ -116,6 +116,23 @@ def get_group_list():
                     # print(k,v)
                     user_info[k] = v
                 if "备注名" in text:
+                    k = text
+                    v = control.GetNextSiblingControl().Name
+                    # print(k,v)
+                    user_info[k] = v
+                if "企业" == text:
+                    k = text
+                    a = control.GetNextSiblingControl()
+                    v = a.GetNextSiblingControl().Name
+                    # print(k,v)
+                    user_info[k] = v
+                if "实名" == text:
+                    k = text
+                    a = control.GetNextSiblingControl()
+                    v = a.GetNextSiblingControl().Name
+                    # print(k,v)
+                    user_info[k] = v
+                if "商城" == text:
                     k = text
                     v = control.GetNextSiblingControl().Name
                     # print(k,v)
