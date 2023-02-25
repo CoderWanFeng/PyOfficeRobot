@@ -76,6 +76,17 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 
 > 持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
 
+如何实现换行效果？代码如下。👇
+
+```python
+# pip install PyOfficeRobot
+# 建议使用清华大学的仓库，教程：https://www.bilibili.com/video/BV1SM411y7vw/
+import PyOfficeRobot
+
+PyOfficeRobot.chat.send_message(who='程序员晚枫', message='你好' + '{ctrl}{ENTER}' + 'hello')
+```
+
+
 ## 3、功能Demo
 
 我最近开源了这个库的全部源代码，功能正在开发中，欢迎大家参与开发~
