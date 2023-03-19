@@ -4,3 +4,5 @@ class ACT_TYPE():
 
 
 SPLIT_LINE = '='*30
+
+NEW_LINE = '{ctrl}{ENTER}'
