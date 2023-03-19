@@ -19,7 +19,9 @@ from PyOfficeRobot.lib.CONST import SPLIT_LINE
 chat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju",
                "receive_message": "",
                "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
-               "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ", }
+               "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ",
+               "chat_by_gpt": "https://www.bilibili.com/video/BV1m8411b7LZ",
+}
 file_dict = {
     "send_file": "https://www.bilibili.com/video/BV1te4y1y7Ro",
 

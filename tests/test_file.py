@@ -20,3 +20,6 @@ class TestFile(unittest.TestCase):
 
     def test_sm_by_time(self):
         send_message_by_time(who='每天进步一点点', message='你好', time='17:38')
+
+    def test_chat_by_gpt(self):
+        chat_by_gpt(who='每天进步一点点')
