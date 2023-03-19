@@ -67,6 +67,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple PyOfficeRobot -U
 | ⭐007-独立使用 | [点我直达](https://www.bilibili.com/video/BV1SY411y7Uh)     |[点我直达](https://github.com/CoderWanFeng/PyOfficeRobot)     |
 | 08-收集群信息 | [点我直达](https://www.bilibili.com/video/BV1eD4y1g7yZ)     |[点我直达](https://mp.weixin.qq.com/s/crjGYUzyQ3iIN3Sx2UUucw)     |
 | 09-发消息如何换行？ | [点我直达](https://www.bilibili.com/video/BV1Xg4y1s79z/)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/08-new_line.py)     |
+| 10-微信 + ChatGPT | [点我直达](http://xhslink.com/zXZAeo)     |[点我直达](https://blog.51cto.com/u_15493782/6131326)     |
 
 > 持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
 #### 微信机器人-其它实现方式
