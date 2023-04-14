@@ -4,3 +4,5 @@ import PyOfficeRobot
 
 # 注意：目前不用加参数，自动收集当前打开的微信群，未来会优化
 PyOfficeRobot.file.get_group_list()
+
+PyOfficeRobot.chat.receive_message()
