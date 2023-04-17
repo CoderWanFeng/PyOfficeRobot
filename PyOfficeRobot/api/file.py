@@ -3,6 +3,7 @@ from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
 
 wx = WeChat()
 
+
 # @act_info(ACT_TYPE.FILE)
 @instruction
 def send_file(who, file):
@@ -14,8 +15,11 @@ def send_file(who, file):
     """
     # 向某人发送文件（以`文件传输助手`为例，发送三个不同类型文件）
     wx.ChatWith(who)  # 打开`文件传输助手`聊天窗口
-    wx.SendFiles(file)  # 向`文件传输助手`发送上述三个文件
+    # wx.SendFiles(file)  # 向`文件传输助手`发送上述三个文件
+    wx.test_SendFiles(filepath=file)  # 向`文件传输助手`发送上述三个文件
+
     # 注：为保证发送文件稳定性，首次发送文件可能花费时间较长，后续调用会缩短发送时间
+
 
 import uiautomation as uia
 
@@ -31,6 +35,7 @@ isinstance (a,int)  # true
 isinstance (a,str) # false
 isinstance (a,(str,int,list))    # 只要满足元组类型中的其中一个即可，答案是满足，所以为false
 """
+
 
 def get_group_list():
     """
