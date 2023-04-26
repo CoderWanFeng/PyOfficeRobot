@@ -8,7 +8,7 @@ from ctypes import *
 from pathlib import Path
 
 import uiautomation as uia
-import win32clipboard
+import win32clipboard  # pywin32
 import win32clipboard as wc
 import win32con
 import win32gui
@@ -310,6 +310,8 @@ class WeChat:
         """向当前聊天窗口发送文件
         not_exists: 如果未找到指定文件，继续或终止程序
         filepath: 要复制文件的绝对路径"""
+        if not Path(filepath).exists():
+            raise BaseException(f'你指定的文件不存在，请检查filepath后，重新运行：{filepath}')
 
         class DROPFILES(Structure):
             _fields_ = [

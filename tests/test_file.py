@@ -28,7 +28,7 @@ class TestFile(unittest.TestCase):
 
     def test_weixin_file(self):
         who = '每天进步一点点'
-        file_path = r'./chat.py'
+        file_path = r'./dfasd.py'
         # file_path = r'D:\workplace\code\github\PyOfficeRobot\tests\chat.py'
         # PyOfficeRobot.file.send_file(who, file)
         file.send_file(who, file_path)
