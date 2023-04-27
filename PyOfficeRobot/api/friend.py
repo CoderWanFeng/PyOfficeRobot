@@ -14,6 +14,8 @@ from pywinauto.controls.uiawrapper import UIAWrapper
 from pywinauto.keyboard import send_keys
 from pywinauto.uia_element_info import UIAElementInfo
 
+from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
+
 
 def Carry_TXL(App_Object, Hello_Str, Tel_Number, notes):
     """
@@ -162,7 +164,7 @@ def Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_EX
     sleep(0.5)
     # </editor-fold>
 
-
+@instruction
 def add(num_notes, msg):
     # <editor-fold desc="代码块 : 获取微信窗口句柄">
     Get_WeChat_Hwnd = lambda: win32gui.FindWindow("WeChatMainWndForPC", "微信")

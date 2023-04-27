@@ -8,30 +8,33 @@
 # Description: 有关 方法说明 的装饰器
 #############################################
 
+import os
 # 每个文件的具体方法说明
 from functools import wraps
-
-
-import os
 
 from PyOfficeRobot.lib.CONST import SPLIT_LINE
 
 chat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju",
-               "receive_message": "",
-               "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
-               "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ",
-               "chat_by_gpt": "https://blog.51cto.com/u_15493782/6131326",
-}
+             "receive_message": "",
+             "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
+             "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ",
+             "chat_by_gpt": "https://blog.51cto.com/u_15493782/6131326",
+             }
 file_dict = {
     "send_file": "https://www.bilibili.com/video/BV1te4y1y7Ro",
 
 }
 
+friend_dict = {
+    "add": "https://www.bilibili.com/video/BV1DV4y1o7t2",
+
+}
 
 # 有多少文件需要说明
 instruction_file_dict = {
     "chat.py": chat_dict,
     "file.py": file_dict,
+    "friend.py": friend_dict,
 }
 
 
@@ -55,7 +58,7 @@ def instruction(func):
 
 #############################################
 # 以下是本文件的工具模块，用来更新方法和链接
-from inspect import getmembers, isfunction, ismethod, isclass
+from inspect import getmembers, isfunction
 
 
 # 获取模块包含的方法名
@@ -63,5 +66,3 @@ def get_method_name(file):
     for method_name in getmembers(file):
         if isfunction(method_name[1]):
             print(f'"{method_name[0]}":"",')
-
-

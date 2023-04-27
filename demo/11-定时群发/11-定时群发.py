@@ -3,10 +3,15 @@
 @Author  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫
 @WeChat     ：CoderWanFeng
 @Blog      ：www.python-office.com
-@Date    ：2023/4/2 22:16 
+@Date    ：2023/4/27 21:20 
 @Description     ：
 '''
 
-import ntchat
+"""
+定时群发消息
+"""
 
-ntchat.WeChat()
+# pip
+import PyOfficeRobot
+
+PyOfficeRobot.group.send()

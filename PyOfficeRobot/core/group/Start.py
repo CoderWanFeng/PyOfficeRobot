@@ -19,7 +19,7 @@ from PySide6.QtWidgets import QApplication, QWidget
 from PySide6.QtWidgets import QFileDialog
 
 from PyOfficeRobot.api.chat import send_message
-from ui_file_py import Ui_Form
+from PyOfficeRobot.core.group.ui_file_py import Ui_Form
 
 
 # 继承QWidget类，以获取其属性和方法
@@ -38,22 +38,13 @@ class MyWidget(QWidget):
         self.state = True
 
     def set_ui(self):
-        self.setWindowTitle("微信自动化-----群发消息")
+        self.setWindowTitle("Python自动化办公社区")
         self.ui.pushButton_load.clicked.connect(self.OnPushbutton_load_Cliked)
         self.ui.pushButton_start.clicked.connect(self.OnPushbutton_Start_Cliked)
         self.ui.pushButton_close.clicked.connect(self._OnPushbutton_Close_Clicked)
         self.ui.listView.clicked.connect(self.test)
 
     def test(self, index: QModelIndex):
-        """print(index.data())
-        print(index.model())
-        print(index.row())
-        print(index.flags())
-        print(id(index))
-        #self.model.setData(index,"hellowrold")
-        s = self.model.index(5)
-        print(s)
-        print(type(s))"""
         count = self.model.rowCount()
         print(count)
         for _ in range(count):

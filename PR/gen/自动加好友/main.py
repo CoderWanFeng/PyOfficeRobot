@@ -47,7 +47,7 @@ def Printf_Log(str_log):
     :return:
     :rtype:
     """
-    with open(r"./Auto_Log.txt", 'a', encoding='utf-8') as f:
+    with open(r"Auto_Log.txt", 'a', encoding='utf-8') as f:
         f.write(str_log + "\n")
 
 
@@ -74,7 +74,7 @@ def Read_Excel(row):
     :rtype: dict类型
     """
     # <editor-fold desc="代码块 : 读取整行数据">
-    Excel_Worker = xlrd.open_workbook(filename=r"./Excel_File/【企查查】查企业-高级搜索“涂料”(202302030683).xls")
+    Excel_Worker = xlrd.open_workbook(filename=r"Excel_File/【企查查】查企业-高级搜索“涂料”(202302030683).xls")
     Excel_Sheet = Excel_Worker.sheet_by_index(0)
     Excel_Dict_Data = dict()
     Excel_Dict_Data['企业名称'] = Excel_Sheet.cell(row, 0).value
