@@ -69,6 +69,8 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 | 09-发消息如何换行？ | [点我直达](https://www.bilibili.com/video/BV1Xg4y1s79z/)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/08-new_line.py)     |
 | 特别篇-微信 + ChatGPT | [点我直达](http://xhslink.com/zXZAeo)     |[点我直达](https://blog.51cto.com/u_15493782/6131326)     |
 | 10-批量加好友 | [点我直达](https://www.bilibili.com/video/BV1DV4y1o7t2)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/PyOfficeRobot/api/friend.py)     |
+| 11-定时群发 | [点我直达](https://www.bilibili.com/video/BV1Nm4y1C7N7)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/11-%E5%AE%9A%E6%97%B6%E7%BE%A4%E5%8F%91/11-%E5%AE%9A%E6%97%B6%E7%BE%A4%E5%8F%91.py)     |
+
 > 持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
 #### 微信机器人-其它实现方式
 
