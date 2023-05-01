@@ -30,11 +30,16 @@ friend_dict = {
 
 }
 
+group_dict = {
+    "send": "https://www.bilibili.com/video/BV1Nm4y1C7N7",
+}
+
 # 有多少文件需要说明
 instruction_file_dict = {
     "chat.py": chat_dict,
     "file.py": file_dict,
     "friend.py": friend_dict,
+    "group.py": group_dict,
 }
 
 

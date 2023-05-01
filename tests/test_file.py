@@ -1,6 +1,6 @@
 import unittest
 
-from PyOfficeRobot.api import file
+from PyOfficeRobot.api import file, group
 
 from PyOfficeRobot.api.chat import *
 from PyOfficeRobot.api.file import *
@@ -33,3 +33,6 @@ class TestFile(unittest.TestCase):
         # PyOfficeRobot.file.send_file(who, file)
         file.send_file(who, file_path)
         # file.send_file(who='每天进步一点点', file=r'D:\workplace\code\github\PyOfficeRobot\dev\contributor\gen\自动加好友\Excel_File\【企查查】查企业-高级搜索“涂料”(202302030683).xls')
+
+    def test_group_send(self):
+        group.send()

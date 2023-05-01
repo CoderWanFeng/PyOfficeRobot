@@ -9,11 +9,12 @@
 
 import sys
 
+from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
 from PySide6.QtWidgets import QApplication
 
 from PyOfficeRobot.core.group.Start import MyWidget
 
-
+@instruction
 def send():
     app = QApplication(sys.argv)
     # 初始化QApplication，界面展示要包含在QApplication初始化之后，结束之前
