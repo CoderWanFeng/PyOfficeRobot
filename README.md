@@ -30,14 +30,12 @@
 
 
 
-
-
 # 又一个微信聊天机器人横空出世了，人人可用！
 
 
 之前给大家分享过一个微信机器人：[一个15分钟的视频，教你用Python创建自己的微信聊天机器人！](http://t.cn/A66p30bI)
 
-但是之前这个机器人，需要基于网页版才能用；然而很多朋友的微信，是不能登录网页版微信的。
+但是之前这个机器人，需要基于网页版才能用(有网页版微信的同学，还可以去继续用)；然而很多朋友的微信，是不能登录网页版微信的。
 
 > 有没有一种微信机器人，任何人的微信都可以用，不需要网页微信功能呢？
 
@@ -46,7 +44,7 @@
 
 ## 1、安装PyOfficeRobot
 
-1行命令，安装PyOfficeRobot这个库
+1行命令，安装PyOfficeRobot这个库。[安装视频](https://www.bilibili.com/video/BV1Xa411u7yU/)
 ```
 pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 ```
@@ -91,6 +89,11 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 
 - [演示代码](https://github.com/CoderWanFeng/PyOfficeRobot/tree/main/demo)
 
+## 4、开发者
+
+| 昵称      | 贡献                    | 时间             |
+|---------|-----------------------|----------------|
+| 雷杰 | 解决了微信更新后，不能发送消息和文件的问题 | 2023/7/6 00：30 |
 
 ---
 

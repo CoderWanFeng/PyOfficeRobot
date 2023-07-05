@@ -17,7 +17,7 @@ from pywinauto.uia_element_info import UIAElementInfo
 from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
 
 
-def Carry_TXL(App_Object, Hello_Str, Tel_Number, notes):
+def _Carry_TXL(App_Object, Hello_Str, Tel_Number, notes):
     """
     该函数为申请好友验证时的函数胡\n
     :param App_Object: 微信窗口操作对象
@@ -71,7 +71,7 @@ def Get_NowTime():
     return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
 
-def FindFriend(WX_Windows, Tel_Number, ErrorCount):
+def _find_friend(WX_Windows, Tel_Number, ErrorCount):
     """
     该函数用于在进入通讯录界面,输入手机号码一系列的操作\n
     :param WX_Windows: 微信窗口对象
@@ -140,7 +140,7 @@ def FindFriend(WX_Windows, Tel_Number, ErrorCount):
     # </editor-fold>
 
 
-def Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_EXE_Wrapper):
+def _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_EXE_Wrapper):
     # <editor-fold desc="代码块 : 进入通讯录界面">
     """
     该函数为打开通讯录界面\n
@@ -201,9 +201,9 @@ def add(num_notes, msg):
     Count = 1
     # </editor-fold>
     for num in num_notes.keys():
-        Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_EXE_Wrapper)
-        result = FindFriend(WX_Windows=WX_Windows, Tel_Number=num, ErrorCount=Count)
-        Carry_TXL(App_Object=WX_Windows, Hello_Str=msg,
+        _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_EXE_Wrapper)
+        result = _find_friend(WX_Windows=WX_Windows, Tel_Number=num, ErrorCount=Count)
+        _Carry_TXL(App_Object=WX_Windows, Hello_Str=msg,
                   Tel_Number=num, notes=num_notes[num])
 
 
@@ -211,7 +211,7 @@ if __name__ == "__main__":
     msg = "你好，我是程序员晚枫，全网同名。"
     # num_list = ['15603052573', '19112440257']
     num_notes = {
-        # '15603052573': '北京-晚枫-学生',
-        '19112440257': '上海-晚枫-乞丐',
+        # 'CoderWanFeng': '北京-晚枫-学生',
+        'hdylw1024': '上海-晚枫-乞丐',
     }
     add(msg=msg, num_notes=num_notes)

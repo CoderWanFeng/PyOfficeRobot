@@ -22,9 +22,9 @@ def send_message(who, message):
 
     # 获取会话列表
     wx.GetSessionList()
-    wx.ChatWith(who)  # 打开`文件传输助手`聊天窗口
+    wx.ChatWith(who)  # 打开`who`聊天窗口
     # for i in range(10):
-    wx.SendMsg(message)  # 向`文件传输助手`发送消息：你好~
+    wx.SendMsg(message,who)  # 向`who`发送消息：你好~
 
 
 @instruction

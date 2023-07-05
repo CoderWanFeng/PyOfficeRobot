@@ -143,7 +143,7 @@ class WeChat:
     def __init__(self):
         self.UiaAPI = uia.WindowControl(ClassName='WeChatMainWndForPC')
         self.SessionList = self.UiaAPI.ListControl(Name='会话')
-        self.EditMsg = self.UiaAPI.EditControl(Name='输入')
+        # self.EditMsg = self.UiaAPI.EditControl(Name='编辑')
         self.SearchBox = self.UiaAPI.EditControl(Name='搜索')
         self.MsgList = self.UiaAPI.ListControl(Name='消息')
         self.SessionItemList = []
@@ -203,12 +203,13 @@ class WeChat:
             self.Search(who)
             return roll_to(RollTimes=1)
 
-    def SendMsg(self, msg, clear=True):
+    def SendMsg(self, msg, who, clear=True):
         '''向当前窗口发送消息
         msg : 要发送的消息
         clear : 是否清除当前已编辑内容
         '''
         self.UiaAPI.SwitchToThisWindow()
+        self.EditMsg = self.UiaAPI.EditControl(Name=who)
         if clear:
             self.EditMsg.SendKeys('{Ctrl}a', waitTime=0)
         self.EditMsg.SendKeys(msg, waitTime=0)
@@ -258,9 +259,9 @@ class WeChat:
         self.SendClipboard()
         return 1
 
-    def SendClipboard(self):
+    def SendClipboard(self, who):
         '''向当前聊天页面发送剪贴板复制的内容'''
-        self.SendMsg('{Ctrl}v')
+        self.SendMsg('{Ctrl}v', who)
 
     @property
     def GetAllMessage(self):
@@ -306,7 +307,7 @@ class WeChat:
 
     ################################微信发文件崩溃 https://blog.csdn.net/weixin_45081575/article/details/126810748
 
-    def test_SendFiles(self, filepath, not_exists='ignore'):
+    def test_SendFiles(self, filepath, who, not_exists='ignore'):
         """向当前聊天窗口发送文件
         not_exists: 如果未找到指定文件，继续或终止程序
         filepath: 要复制文件的绝对路径"""
@@ -349,5 +350,5 @@ class WeChat:
         setClipboardFiles(filename)
 
         # wc.CloseClipboard()
-        self.SendClipboard()
+        self.SendClipboard(who)
         return 1

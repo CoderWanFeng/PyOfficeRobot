@@ -53,7 +53,7 @@ def instruction(func):
             print('【PyOfficeRobot，微信机器人全部功能】：https://www.python-office.com/office/robot.html')
             print(SPLIT_LINE)
             print(
-                f'正在运行：office.{os.path.basename(func_filename)[:-3]}.{func.__name__} , 这个方法的使用说明：{instruction_file_dict[func_filename][func.__name__]}')
+                f'正在运行：PyOfficeRobot.{os.path.basename(func_filename)[:-3]}.{func.__name__} , 这个方法的使用说明：{instruction_file_dict[func_filename][func.__name__]}')
             print(SPLIT_LINE)
         instruction_res = func(*args, **kwargs)
         return instruction_res

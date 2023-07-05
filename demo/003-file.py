@@ -1,3 +1,3 @@
-import office
+import PyOfficeRobot
 
-office.wechat.send_file(who='文件传输助手', file=r'../test_files/images/0816.jpg')
+PyOfficeRobot.file.send_file(who='文件传输助手', file=r'C:\Users\Lenovo\Desktop\temp\0.jpg')
