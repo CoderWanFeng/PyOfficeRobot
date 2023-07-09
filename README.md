@@ -51,23 +51,26 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 
 ## 2、视频教程
 
-- ⭐全套源码：[Github](https://github.com/CoderWanFeng/PyOfficeRobot)
+- ⭐全部功能的演示代码 + 项目源码：[Github](https://github.com/CoderWanFeng/PyOfficeRobot)、[gitee](https://gitee.com/CoderWanFeng/PyOfficeRobot)
 
 
 | 功能说明       | 视频 |代码 |
 | -------------- | -------- |-------- |
 | 🔥001-项目发布 | [点我直达](https://www.bilibili.com/video/BV1Xa411u7yU)     |[点我直达](https://mp.weixin.qq.com/s/6slx8hyv_WuK7v5Nzt3XKQ)     |
-| 002-自动发消息 | [点我直达](https://www.bilibili.com/video/BV1Jt4y1j7F1)     |[点我直达](https://github.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/001-message.py)     |
-| 003-自动发文件 | [点我直达](https://www.bilibili.com/video/BV1te4y1y7Ro)     |[点我直达](https://github.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/003-file.py)     |
-| 004-根据关键词，自动回复 | [点我直达](https://www.bilibili.com/video/BV1fV4y1M7ju)     |[点我直达](https://github.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/004-%E6%A0%B9%E6%8D%AE%E5%85%B3%E9%94%AE%E8%AF%8D%E5%9B%9E%E5%A4%8D.py)     |
-| ⌚005-定时自动发消息 | [点我直达](https://www.bilibili.com/video/BV1m8411b7LZ/)     |[点我直达](https://github.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/06-%E5%AE%9A%E6%97%B6.py)     |
-| 006-自己加功能 | [点我直达](https://www.bilibili.com/video/BV14R4y127h6)     |     |
-| ⭐007-独立使用 | [点我直达](https://www.bilibili.com/video/BV1SY411y7Uh)     |[点我直达](https://github.com/CoderWanFeng/PyOfficeRobot)     |
-| 08-收集群信息 | [点我直达](https://www.bilibili.com/video/BV1eD4y1g7yZ)     |[点我直达](https://mp.weixin.qq.com/s/crjGYUzyQ3iIN3Sx2UUucw)     |
-| 09-发消息如何换行？ | [点我直达](https://www.bilibili.com/video/BV1Xg4y1s79z/)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/08-new_line.py)     |
-| 特别篇-微信 + ChatGPT | [点我直达](http://xhslink.com/zXZAeo)     |[点我直达](https://blog.51cto.com/u_15493782/6131326)     |
-| 10-批量加好友 | [点我直达](https://www.bilibili.com/video/BV1DV4y1o7t2)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/PyOfficeRobot/api/friend.py)     |
-| 11-定时群发 | [点我直达](https://www.bilibili.com/video/BV1Nm4y1C7N7)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/11-%E5%AE%9A%E6%97%B6%E7%BE%A4%E5%8F%91/11-%E5%AE%9A%E6%97%B6%E7%BE%A4%E5%8F%91.py)     |
+| 002-自动发消息 | [点我直达](https://www.bilibili.com/video/BV1Jt4y1j7F1)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/001-%E5%8F%91%E4%B8%80%E6%9D%A1%E4%BF%A1%E6%81%AF.py)     |
+| 003-自动发文件 | [点我直达](https://www.bilibili.com/video/BV1te4y1y7Ro)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/002-%E5%8F%91%E6%96%87%E4%BB%B6.py)     |
+| 004-根据关键词，自动回复 | [点我直达](https://www.bilibili.com/video/BV1fV4y1M7ju)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/003-%E6%A0%B9%E6%8D%AE%E5%85%B3%E9%94%AE%E8%AF%8D%E5%9B%9E%E5%A4%8D.py)     |
+| ⌚005-定时自动发消息 | [点我直达](https://www.bilibili.com/video/BV1m8411b7LZ/)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/004-%E5%AE%9A%E6%97%B6%E5%8F%91%E9%80%81.py)     |
+| 006-自己加功能 | [点我直达](https://www.bilibili.com/video/BV14R4y127h6)     |    [点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/005-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8A%9F%E8%83%BD.py)   |
+| ⭐007-独立使用 | [点我直达](https://www.bilibili.com/video/BV1SY411y7Uh)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/006-%E7%8B%AC%E7%AB%8B%E7%89%88%E6%9C%AC.py)     |
+| 08-收集群信息 | [点我直达](https://www.bilibili.com/video/BV1eD4y1g7yZ)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/007-%E6%94%B6%E9%9B%86%E7%BE%A4%E6%B6%88%E6%81%AF.py)     |
+| 09-发消息如何换行？ | [点我直达](https://www.bilibili.com/video/BV1Xg4y1s79z/)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/008-%E5%8F%91%E6%B6%88%E6%81%AF%E6%8D%A2%E8%A1%8C.py)     |
+| 特别篇-微信 + ChatGPT | [点我直达](http://xhslink.com/zXZAeo)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/011-chat_chatgpt.py)     |
+| 10-批量加好友 | [点我直达](https://www.bilibili.com/video/BV1DV4y1o7t2)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/009-%E6%89%B9%E9%87%8F%E5%8A%A0%E5%A5%BD%E5%8F%8B.py)     |
+| 11-定时群发 | [点我直达](https://www.bilibili.com/video/BV1Nm4y1C7N7)     |[点我直达](https://gitee.com/CoderWanFeng/PyOfficeRobot/blob/main/demo/010-%E5%AE%9A%E6%97%B6%E7%BE%A4%E5%8F%91.py)     |
+| 12-智能聊天 | [点我直达](https://mp.weixin.qq.com/s/plUnUjyEvbL284G9sogYYw)     |[点我直达](https://mp.weixin.qq.com/s/plUnUjyEvbL284G9sogYYw)     |
+
+
 
 > 持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
 #### 微信机器人-其它实现方式
