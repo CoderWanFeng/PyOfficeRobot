@@ -183,6 +183,9 @@ class WeChat:
         who : 要打开的聊天框好友名，str;  * 最好完整匹配，不完全匹配只会选取搜索框第一个
         RollTimes : 默认向下滚动多少次，再进行搜索
         '''
+        while win32gui.FindWindow('ChatWnd',None):
+            uia.WindowControl(ClassName='ChatWnd').SwitchToThisWindow()
+            uia.WindowControl(ClassName='ChatWnd').ButtonControl(Name='关闭').Click(simulateMove=False)
         self.UiaAPI.SwitchToThisWindow()
         RollTimes = 10 if not RollTimes else RollTimes
 
@@ -209,7 +212,7 @@ class WeChat:
         clear : 是否清除当前已编辑内容
         '''
         self.UiaAPI.SwitchToThisWindow()
-        self.EditMsg = self.UiaAPI.EditControl(Name=who)
+        self.EditMsg = self.UiaAPI.EditControl(SubName=who)
         if clear:
             self.EditMsg.SendKeys('{Ctrl}a', waitTime=0)
         self.EditMsg.SendKeys(msg, waitTime=0)

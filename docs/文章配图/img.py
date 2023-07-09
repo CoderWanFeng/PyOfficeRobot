@@ -8,4 +8,4 @@
 '''
 import office
 
-office.image.add_watermark(file=r'./imgs/公众号+Web.jpg', mark='程序员晚枫')
+office.image.add_watermark(file=r'imgs/公众号+Web.jpg', mark='程序员晚枫')

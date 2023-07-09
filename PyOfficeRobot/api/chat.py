@@ -1,10 +1,10 @@
+import datetime
+import os
+
+import poai
 import schedule
 
 from PyOfficeRobot.core.WeChatType import WeChat
-import datetime
-import os
-import poai
-
 from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
 
 wx = WeChat()
@@ -24,7 +24,7 @@ def send_message(who, message):
     wx.GetSessionList()
     wx.ChatWith(who)  # 打开`who`聊天窗口
     # for i in range(10):
-    wx.SendMsg(message,who)  # 向`who`发送消息：你好~
+    wx.SendMsg(message, who)  # 向`who`发送消息：你好~
 
 
 @instruction
