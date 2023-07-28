@@ -19,6 +19,7 @@ chat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju",
              "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
              "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ",
              "chat_by_gpt": "https://blog.51cto.com/u_15493782/6131326",
+             "chat_robot": "https://mp.weixin.qq.com/s/plUnUjyEvbL284G9sogYYw",
              }
 file_dict = {
     "send_file": "https://www.bilibili.com/video/BV1te4y1y7Ro",

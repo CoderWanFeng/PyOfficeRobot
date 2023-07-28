@@ -6,7 +6,7 @@ wx = WeChat()
 
 # @act_info(ACT_TYPE.FILE)
 @instruction
-def send_file(who, file):
+def send_file(who: str, file: str):
     """
     发送任意类型的文件
     :param who:

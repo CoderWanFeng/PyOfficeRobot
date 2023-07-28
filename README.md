@@ -21,7 +21,7 @@
   	<a href="https://mp.weixin.qq.com/s/yaSmFKO3RrBpyanW3nvRAQ">
 	<img src="https://img.shields.io/badge/QQ-163434413-orange"/>
   </a>
-    	<a href="https://mp.weixin.qq.com/s/wx-JkgOUoJhb-7ZESxl93w">
+    	<a href="https://mp.weixin.qq.com/s/NN2pX2bQPpczOeGF4ARNtw">
 	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
   </a>
 
@@ -100,7 +100,11 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 
 ---
 
-![](https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg)
+<p align="center" id='开源交流群-banner'>
+<a target="_blank" href='https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office.jpg'>
+<img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg" width="100%"/>
+</a> 
+</p>
 
 
 ## ⭐Star 
@@ -112,7 +116,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 
 
 <p align="center" id='30讲自动化办公-banner'>
-    <a target="_blank" href='http://gk.link/a/10E3B'>
+    <a target="_blank" href='https://www.python-office.com/video/video.html'>
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fauto-work.jpg" width="100%"/>
     </a>   
 </p>
