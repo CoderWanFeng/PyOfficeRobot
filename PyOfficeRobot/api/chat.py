@@ -95,7 +95,7 @@ def chat_by_gpt(who, api_key, model_engine="text-davinci-002", max_tokens=1024, 
                 不是上次的对话:(receive_msg != temp_msg)
                 对方内容在自己的预设里:(receive_msg in kv.keys())
                 """
-                print(f'{who}发送：{receive_msg}')
+                print(f'【{who}】发送：【{receive_msg}】')
                 temp_msg = receive_msg
                 reply_msg = poai.chatgpt.chat(api_key, receive_msg,
                                               model_engine, max_tokens, n, stop, temperature,
@@ -120,7 +120,7 @@ def chat_robot(who):
                 不是上次的对话:(receive_msg != temp_msg)
                 对方内容在自己的预设里:(receive_msg in kv.keys())
                 """
-                print(f'{who}发送：{receive_msg}')
+                print(f'【{who}】发送：【{receive_msg}】')
                 temp_msg = receive_msg
                 reply_msg = porobot.normal.chat(receive_msg)
                 wx.SendMsg(reply_msg, who)  # 向`who`发送消息
