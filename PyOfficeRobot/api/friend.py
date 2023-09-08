@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 '''
 @作者 ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫
-@微信 ：CoderWanFeng : https://mp.weixin.qq.com/s/yFcocJbfS9Hs375NhE8Gbw
+@微信 ：CoderWanFeng : https://mp.weixin.qq.com/s/B1V6KeXc7IOEB8DgXLWv3g
 @个人网站 ：www.python-office.com
 @Date    ：2023/4/23 23:01 
 @Description     ：
@@ -94,7 +94,7 @@ def _find_friend(WX_Windows, Tel_Number, ErrorCount):
     Edit_Number_Wrapper.click_input()
     Edit_Number_Wrapper.type_keys(Tel_Number)
 
-    Button_Find = WX_Windows.child_window(title='搜索：')
+    Button_Find = WX_Windows.child_window(title='搜索：' + Tel_Number)
     Button_Find_Wrapper = Button_Find.wrapper_object()
     """:type : pywinauto.controls.uiawrapper.UIAWrapper"""
     Button_Find_Wrapper.draw_outline(colour='red', thickness=5)
@@ -164,6 +164,7 @@ def _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_E
     sleep(0.5)
     # </editor-fold>
 
+
 @instruction
 def add(num_notes, msg):
     # <editor-fold desc="代码块 : 获取微信窗口句柄">
@@ -204,7 +205,7 @@ def add(num_notes, msg):
         _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_EXE_Wrapper)
         result = _find_friend(WX_Windows=WX_Windows, Tel_Number=num, ErrorCount=Count)
         _Carry_TXL(App_Object=WX_Windows, Hello_Str=msg,
-                  Tel_Number=num, notes=num_notes[num])
+                   Tel_Number=num, notes=num_notes[num])
 
 
 if __name__ == "__main__":
