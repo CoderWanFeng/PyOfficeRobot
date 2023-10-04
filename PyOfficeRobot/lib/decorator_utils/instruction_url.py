@@ -14,25 +14,26 @@ from functools import wraps
 
 from PyOfficeRobot.lib.CONST import SPLIT_LINE
 
-chat_dict = {"chat_by_keywords": "https://www.bilibili.com/video/BV1fV4y1M7ju",
-             "receive_message": "",
-             "send_message": "https://www.bilibili.com/video/BV1Jt4y1j7F1",
-             "send_message_by_time": "https://www.bilibili.com/video/BV1m8411b7LZ",
-             "chat_by_gpt": "https://blog.51cto.com/u_15493782/6131326",
-             "chat_robot": "https://www.bilibili.com/video/BV1Xa411u7yU",
-             }
+chat_dict = {
+    "send_message": "https://www.bilibili.com/video/BV1S84y1m7xd?p=3",
+    "chat_by_keywords": "https://www.bilibili.com/video/BV1S84y1m7xd?p=5",
+    "send_message_by_time": "https://www.bilibili.com/video/BV1S84y1m7xd?p=7",
+    "chat_by_gpt": "https://www.bilibili.com/video/BV1S84y1m7xd?p=11",
+    "chat_robot": "https://www.bilibili.com/video/BV1S84y1m7xd?p=11",
+    "receive_message": "",
+}
 file_dict = {
-    "send_file": "https://www.bilibili.com/video/BV1te4y1y7Ro",
+    "send_file": "https://www.bilibili.com/video/BV1S84y1m7xd?p=4",
 
 }
 
 friend_dict = {
-    "add": "https://www.bilibili.com/video/BV1DV4y1o7t2",
+    "add": "https://www.bilibili.com/video/BV1S84y1m7xd?p=9",
 
 }
 
 group_dict = {
-    "send": "https://www.bilibili.com/video/BV1Nm4y1C7N7",
+    "send": "https://www.bilibili.com/video/BV1S84y1m7xd?p=10",
 }
 
 # 有多少文件需要说明
@@ -51,7 +52,7 @@ def instruction(func):
         # 如果有这个文件，并且已经配置了方法名对应的说明链接，则打印出来
         if func_filename in instruction_file_dict.keys() and instruction_file_dict[func_filename][func.__name__]:
             print(SPLIT_LINE)
-            print('【PyOfficeRobot，微信机器人全部功能】：https://www.python-office.com/office/robot.html')
+            print('【PyOfficeRobot，微信机器人全部功能】：https://mp.weixin.qq.com/s/HIl7ZsldGc9Lp8JtCEzOpg')
             print(SPLIT_LINE)
             print(
                 f'正在运行：PyOfficeRobot.{os.path.basename(func_filename)[:-3]}.{func.__name__} , 这个方法的使用说明：{instruction_file_dict[func_filename][func.__name__]}')
