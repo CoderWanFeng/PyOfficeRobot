@@ -156,13 +156,13 @@ class WeChat:
             self.SessionItemList = []
         for i in range(100):
             try:
-                name = self.SessionItem.Name
+                wf_name = self.SessionItem.Name
             except:
                 break
-            if name not in self.SessionItemList:
-                self.SessionItemList.append(name)
-            if name not in SessionList:
-                SessionList.append(name)
+            if wf_name not in self.SessionItemList:
+                self.SessionItemList.append(wf_name)
+            if wf_name not in SessionList:
+                SessionList.append(wf_name)
             self.SessionItem = self.SessionItem.GetNextSiblingControl()
         return SessionList
 
