@@ -137,3 +137,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/ads%2F%E8%81%94%E7%9B%9F%E5%B9%BF%E5%91%8A%2F%E5%A4%96%E5%8D%96-1040-100.jpg" width="100%"/>
     </a>   
 </p>
+
+## 致谢项目
+
+- [wxauto](https://github.com/cluic/wxauto)
