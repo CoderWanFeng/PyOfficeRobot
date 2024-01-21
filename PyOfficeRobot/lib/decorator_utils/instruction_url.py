@@ -52,7 +52,7 @@ def instruction(func):
         # 如果有这个文件，并且已经配置了方法名对应的说明链接，则打印出来
         if func_filename in instruction_file_dict.keys() and instruction_file_dict[func_filename][func.__name__]:
             print(SPLIT_LINE)
-            print('【PyOfficeRobot，微信机器人全部功能】：https://mp.weixin.qq.com/s/HIl7ZsldGc9Lp8JtCEzOpg')
+            print('【PyOfficeRobot，微信机器人全部功能】：https://mp.weixin.qq.com/s/2fZiSQPVtDJCz0fHtqrsVA')
             print(SPLIT_LINE)
             print(
                 f'正在运行：PyOfficeRobot.{os.path.basename(func_filename)[:-3]}.{func.__name__} , 这个方法的使用说明：{instruction_file_dict[func_filename][func.__name__]}')

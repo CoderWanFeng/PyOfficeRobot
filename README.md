@@ -40,7 +40,7 @@
 
 ## 1、安装PyOfficeRobot
 
-1行命令，安装PyOfficeRobot这个库。[安装视频](https://www.bilibili.com/video/BV1Xa411u7yU/)
+1行命令，安装PyOfficeRobot这个库。[安装视频](https://www.bilibili.com/video/BV1S84y1m7xd/?p=2/)
 
 ```
 pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
