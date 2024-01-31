@@ -38,3 +38,6 @@ class TestFile(unittest.TestCase):
 
     def test_group_send(self):
         group.send()
+
+    def test_chat_ali(self):
+        chat_ali(who='每天进步一点点', key=os.getenv('TY_KEY'))

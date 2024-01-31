@@ -3,6 +3,8 @@ class ACT_TYPE():
     FILE = '文件'
 
 
-SPLIT_LINE = '='*30
+SPLIT_LINE = '=' * 30
 
 NEW_LINE = '{ctrl}{ENTER}'
+
+GPT_TYPE = {"ALI": "qianwen"}

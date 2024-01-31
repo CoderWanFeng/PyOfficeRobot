@@ -126,3 +126,25 @@ def chat_robot(who):
                 wx.SendMsg(reply_msg, who)  # 向`who`发送消息
         except:
             pass
+
+
+@instruction
+def chat_ali(who, key):
+    wx.GetSessionList()  # 获取会话列表
+    wx.ChatWith(who)  # 打开`who`聊天窗口
+    temp_msg = None
+    while True:
+        try:
+            friend_name, receive_msg = wx.GetAllMessage[-1][0], wx.GetAllMessage[-1][1]  # 获取朋友的名字、发送的信息
+            if (friend_name == who) & (receive_msg != temp_msg):
+                """
+                条件：
+                朋友名字正确:(friend_name == who)
+                不是上次的对话:(receive_msg != temp_msg)
+                对方内容在自己的预设里:(receive_msg in kv.keys())
+                """
+                print(f'【{who}】发送：【{receive_msg}】')
+                reply_msg = poai.chat.ali(key, prompt=receive_msg)
+                wx.SendMsg(reply_msg, who)  # 向`who`发送消息
+        except:
+            pass
