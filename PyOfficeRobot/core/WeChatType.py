@@ -1,6 +1,12 @@
 # -*-coding:utf-8-*-
+'''
+@学习网站      ：www.python-office.com
+@读者群     ：http://www.python4office.cn/wechat-group/
+@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫，微信：CoderWanFeng
+@代码日期    ：2022/9/26 21:43
+@本段代码的视频说明     ：
+'''
 # sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='gb18030')
-
 
 import os
 import time
@@ -13,7 +19,7 @@ import win32clipboard as wc
 import win32con
 import win32gui
 
-PUBLISH_ID = '公众号：程序员晚枫'
+PUBLISH_ID = '公众号：Python自动化办公社区'
 
 COPYDICT = {}
 
@@ -183,7 +189,7 @@ class WeChat:
         who : 要打开的聊天框好友名，str;  * 最好完整匹配，不完全匹配只会选取搜索框第一个
         RollTimes : 默认向下滚动多少次，再进行搜索
         '''
-        while win32gui.FindWindow('ChatWnd',None):
+        while win32gui.FindWindow('ChatWnd', None):
             uia.WindowControl(ClassName='ChatWnd').SwitchToThisWindow()
             uia.WindowControl(ClassName='ChatWnd').ButtonControl(Name='关闭').Click(simulateMove=False)
         self.UiaAPI.SwitchToThisWindow()
