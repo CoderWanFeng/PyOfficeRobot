@@ -1,6 +1,6 @@
 # -*-coding:utf-8-*-
 '''
-@学习网站      ：www.python-office.com
+@学习网站      ：https://www.python-office.com
 @读者群     ：http://www.python4office.cn/wechat-group/
 @作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫，微信：CoderWanFeng
 @代码日期    ：2022/9/26 21:43
@@ -13,7 +13,7 @@ import time
 from ctypes import *
 from pathlib import Path
 
-import uiautomation as uia
+import uiautomation as ui_CoderWanFeng
 import win32clipboard  # pywin32
 import win32clipboard as wc
 import win32con
@@ -35,7 +35,7 @@ class WxParam:
 
 class WxUtils:
     def SplitMessage(MsgItem):
-        uia.SetGlobalSearchTimeout(0)
+        ui_CoderWanFeng.SetGlobalSearchTimeout(0)
         MsgItemName = MsgItem.Name
         if MsgItem.BoundingRectangle.height() == WxParam.SYS_TEXT_HEIGHT:
             Msg = ('SYS', MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
@@ -59,7 +59,7 @@ class WxUtils:
                 Msg = (User.Name, MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
             except:
                 Msg = ('SYS', MsgItemName, ''.join([str(i) for i in MsgItem.GetRuntimeId()]))
-        uia.SetGlobalSearchTimeout(10.0)
+        ui_CoderWanFeng.SetGlobalSearchTimeout(10.0)
         return Msg
 
     def SetClipboard(data, dtype='text'):
@@ -98,7 +98,7 @@ class WxUtils:
         return im
 
     def SavePic(savepath=None, filename=None):
-        Pic = uia.WindowControl(ClassName='ImagePreviewWnd', Name='图片查看')
+        Pic = ui_CoderWanFeng.WindowControl(ClassName='ImagePreviewWnd', Name='图片查看')
         Pic.SendKeys('{Ctrl}s')
         SaveAs = Pic.WindowControl(ClassName='#32770', Name='另存为...')
         SaveAsEdit = SaveAs.EditControl(ClassName='Edit', Name='文件名:')
@@ -147,7 +147,7 @@ class WxUtils:
 
 class WeChat:
     def __init__(self):
-        self.UiaAPI = uia.WindowControl(ClassName='WeChatMainWndForPC')
+        self.UiaAPI = ui_CoderWanFeng.WindowControl(ClassName='WeChatMainWndForPC')
         self.SessionList = self.UiaAPI.ListControl(Name='会话')
         # self.EditMsg = self.UiaAPI.EditControl(Name='编辑')
         self.SearchBox = self.UiaAPI.EditControl(Name='搜索')
@@ -190,8 +190,8 @@ class WeChat:
         RollTimes : 默认向下滚动多少次，再进行搜索
         '''
         while win32gui.FindWindow('ChatWnd', None):
-            uia.WindowControl(ClassName='ChatWnd').SwitchToThisWindow()
-            uia.WindowControl(ClassName='ChatWnd').ButtonControl(Name='关闭').Click(simulateMove=False)
+            ui_CoderWanFeng.WindowControl(ClassName='ChatWnd').SwitchToThisWindow()
+            ui_CoderWanFeng.WindowControl(ClassName='ChatWnd').ButtonControl(Name='关闭').Click(simulateMove=False)
         self.UiaAPI.SwitchToThisWindow()
         RollTimes = 10 if not RollTimes else RollTimes
 
@@ -284,10 +284,10 @@ class WeChat:
     @property
     def GetLastMessage(self):
         '''获取当前窗口中最后一条聊天记录'''
-        uia.SetGlobalSearchTimeout(1.0)  # 每秒更新一次
+        ui_CoderWanFeng.SetGlobalSearchTimeout(1.0)  # 每秒更新一次
         MsgItem = self.MsgList.GetChildren()[-1]
         Msg = WxUtils.SplitMessage(MsgItem)
-        uia.SetGlobalSearchTimeout(10.0)
+        ui_CoderWanFeng.SetGlobalSearchTimeout(10.0)
         return Msg
 
     def LoadMoreMessage(self, n=0.1):
@@ -312,7 +312,7 @@ class WeChat:
 
     def SavePic(self, savepath=None, filename=None):
         WxUtils.SavePic()
-        # Pic = uia.WindowControl(ClassName='ImagePreviewWnd', Name='图片查看')
+        # Pic = ui_CoderWanFeng.WindowControl(ClassName='ImagePreviewWnd', Name='图片查看')
 
     ################################微信发文件崩溃 https://blog.csdn.net/weixin_45081575/article/details/126810748
 

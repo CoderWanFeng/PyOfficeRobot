@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 '''
 @作者 ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫
-@微信 ：CoderWanFeng : https://mp.weixin.qq.com/s/Nt8E8vC-ZsoN1McTOYbY2g
+@微信 ：CoderWanFeng : https://mp.weixin.qq.com/s/8x7c9qiAneTsDJq9JnWLgA
 @个人网站 ：www.python-office.com
 @Date    ：2023/4/23 23:01 
 @Description     ：
@@ -210,7 +210,7 @@ def add(num_notes, msg):
 
 if __name__ == "__main__":
     msg = "你好，我是程序员晚枫，全网同名。"
-    # num_list = ['15603052573', '19112440257']
+    # num_list = ['CoderWanFeng']
     num_notes = {
         # 'CoderWanFeng': '北京-晚枫-学生',
         'hdylw1024': '上海-晚枫-乞丐',

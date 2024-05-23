@@ -20,7 +20,7 @@ def send_file(who: str, file: str):
     # 注：为保证发送文件稳定性，首次发送文件可能花费时间较长，后续调用会缩短发送时间
 
 
-import uiautomation as uia
+import uiautomation as ui_CoderWanFeng
 
 """ isinstance()函数知识点:
 
@@ -41,8 +41,8 @@ def get_group_list():
     author: Zijian
     :return:
     """
-    uia.uiautomation.SetGlobalSearchTimeout(2)
-    wechat_win = uia.WindowControl(Depth=1, Name="微信", ClassName="WeChatMainWndForPC")
+    ui_CoderWanFeng.uiautomation.SetGlobalSearchTimeout(2)
+    wechat_win = ui_CoderWanFeng.WindowControl(Depth=1, Name="微信", ClassName="WeChatMainWndForPC")
     wechat_win.SwitchToThisWindow()
     wechat_win.SetActive()
     wechat_win.SetTopmost()
@@ -69,10 +69,10 @@ def get_group_list():
     sum_info = []
     for index, member in enumerate(numbers):
         # print(type(member))
-        # print(uia.ListItemControl)
+        # print(ui_CoderWanFeng.ListItemControl)
 
         # 判断列表的每一个子成员 是不是列表项目控件,如果不是就跳过
-        if not isinstance(member, uia.ListItemControl):
+        if not isinstance(member, ui_CoderWanFeng.ListItemControl):
             continue
 
         # 判断列表的每一个子成员 是不是列表项目控件的名称是否存在名字,或有添加,删除,移除的关键字,如果不是就跳过。
@@ -80,7 +80,7 @@ def get_group_list():
             continue
 
         # 再判断当前时候有 快捷键被按下的状态,如果有直接break跳出循环停止采集.
-        if uia.IsKeyPressed(uia.Keys.VK_F2):
+        if ui_CoderWanFeng.IsKeyPressed(ui_CoderWanFeng.Keys.VK_F2):
             print("F2已被按下，停止采集")
             break
 
@@ -88,7 +88,7 @@ def get_group_list():
         # 判断 每个成员的边界底部是否超出整个列表成员控件边框的底部,如果超过就发送下滚轮热键
         pos = member.BoundingRectangle
         if pos.bottom >= rect.bottom:
-            uia.WheelDown(waitTime=0.5)
+            ui_CoderWanFeng.WheelDown(waitTime=0.5)
 
         ### 先左键点击每个成员,再用右键点击取消
         # 左键点击每个成员
@@ -96,14 +96,14 @@ def get_group_list():
 
         # 左键后会出现一个窗格控件  WalkControl返回的是一个元组类型(control, depth)控件,换句话说就是一个长度为2的元组对象 for循环迭代器时需要用两个变量去接收 如果用一个变量去接受返回的是一个元组长度为2的对象
 
-        user_info_pane = uia.PaneControl(Name="微信")
+        user_info_pane = ui_CoderWanFeng.PaneControl(Name="微信")
         # user_info_pane拿到用户信息弹窗后截图保存本地文件
         # user_info_pane.CaptureToImage(savePath=f"{index}.png")
 
         # 用户信息字典
         user_info = {}
         user_info['群列表显示'] = member.Name
-        for control, depth in uia.WalkControl(user_info_pane):
+        for control, depth in ui_CoderWanFeng.WalkControl(user_info_pane):
             # print(control)  for循环迭代器时需要用两个变量去接收 如果用一个变量去接受返回的是一个元组对象长度为2的
 
             if control.ControlTypeName == "TextControl":
@@ -146,7 +146,7 @@ def get_group_list():
 
         # 右键点击每个成员取消个人弹框 或者 发送ESC 快捷键
         # member.RightClick(waitTime=0.01)
-        uia.SendKeys('{ESC}')
+        ui_CoderWanFeng.SendKeys('{ESC}')
 
     print(sum_info)
 
