@@ -11,5 +11,5 @@
 import PyOfficeRobot
 
 # 智能聊天，只需要一行代码
-PyOfficeRobot.chat.chat_robot(who='每天进步一点点')
+PyOfficeRobot.chat.chat_robot(who='程序员晚枫')
 
