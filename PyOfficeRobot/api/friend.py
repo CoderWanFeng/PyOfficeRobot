@@ -11,6 +11,7 @@ from time import sleep
 from pywinauto.application import *
 from pywinauto.base_wrapper import *
 from pywinauto.controls.uiawrapper import UIAWrapper
+from pywinauto.findwindows import ElementNotFoundError
 from pywinauto.keyboard import send_keys
 from pywinauto.uia_element_info import UIAElementInfo
 
@@ -28,8 +29,13 @@ def _Carry_TXL(App_Object, Hello_Str, Tel_Number, notes):
     """
     # <editor-fold desc="代码块 : 填写验证信息以及确认操作">
     # Anchor为锚点 Target为目标点
-    Anchor_1 = App_Object.child_window(title='发送添加朋友申请')
-    Anchor_1.draw_outline(colour='green', thickness=5)
+    Anchor_1 = None
+    try:
+        Anchor_1 = App_Object.child_window(title='发送添加朋友申请')
+        Anchor_1.draw_outline(colour='green', thickness=5)
+    except ElementNotFoundError:
+        # 直接添加上好久就返回
+        return False
     Anchor_1_Wrapper = Anchor_1.wrapper_object()
     Anchor_1_Wrapper_Parent = Anchor_1_Wrapper.element_info.parent
     Children_1 = Anchor_1_Wrapper_Parent.children()
@@ -93,13 +99,11 @@ def _find_friend(WX_Windows, Tel_Number, ErrorCount):
     Edit_Number_Wrapper.draw_outline(colour='red', thickness=5)
     Edit_Number_Wrapper.click_input()
     Edit_Number_Wrapper.type_keys(Tel_Number)
-
-    Button_Find = WX_Windows.child_window(title='搜索：' + Tel_Number)
-    Button_Find_Wrapper = Button_Find.wrapper_object()
+    # 会获取到两个搜索的title，使用迭代方式
+    Button_Find = WX_Windows.descendants(title='搜索：' + Tel_Number)
     """:type : pywinauto.controls.uiawrapper.UIAWrapper"""
-    Button_Find_Wrapper.draw_outline(colour='red', thickness=5)
-    Button_Find_Wrapper.click_input()
-
+    Button_Find[0].draw_outline(colour='red', thickness=5)
+    Button_Find[0].click_input()
     try:
 
         Button_AddTXL = WX_Windows.child_window(title='添加到通讯录')
@@ -140,7 +144,7 @@ def _find_friend(WX_Windows, Tel_Number, ErrorCount):
     # </editor-fold>
 
 
-def _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_EXE_Wrapper):
+def _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper):
     # <editor-fold desc="代码块 : 进入通讯录界面">
     """
     该函数为打开通讯录界面\n
@@ -150,14 +154,14 @@ def _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_E
     Button_SC_Wrapper.draw_outline(colour="red", thickness=5)
     Button_SC_Wrapper.click_input()
     sleep(0.5)
-    Button_EXE_Wrapper.draw_outline(colour="red", thickness=5)
-    Button_EXE_Wrapper.click_input()
+    # Button_EXE_Wrapper.draw_outline(colour="red", thickness=5)
+    # Button_EXE_Wrapper.click_input()
     sleep(0.5)
     Button_LT_Wrapper.draw_outline(colour="red", thickness=5)
     Button_LT_Wrapper.click_input()
     sleep(0.5)
-    Button_EXE_Wrapper.draw_outline(colour="red", thickness=5)
-    Button_EXE_Wrapper.click_input()
+    # Button_EXE_Wrapper.draw_outline(colour="red", thickness=5)
+    # Button_EXE_Wrapper.click_input()
     sleep(0.5)
     Button_TXL_Wrapper.draw_outline(colour="red", thickness=5)
     Button_TXL_Wrapper.click_input()
@@ -192,19 +196,21 @@ def add(num_notes, msg):
     Button_LT = WX_Windows.child_window(title='聊天')
     Button_TXL = WX_Windows.child_window(title='通讯录')
     Button_SC = WX_Windows.child_window(title='收藏')
-    Button_EXE = WX_Windows.child_window(title='小程序面板')
+    # Button_EXE = WX_Windows.child_window(title='小程序面板')
 
     Button_LT_Wrapper = Button_LT.wrapper_object()
     Button_TXL_Wrapper = Button_TXL.wrapper_object()
     Button_SC_Wrapper = Button_SC.wrapper_object()
-    Button_EXE_Wrapper = Button_EXE.wrapper_object()
+    # Button_EXE_Wrapper = Button_EXE.wrapper_object()
 
     Count = 1
     # </editor-fold>
     for num in num_notes.keys():
-        _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper, Button_EXE_Wrapper)
+        _Open_TXL(Button_LT_Wrapper, Button_TXL_Wrapper, Button_SC_Wrapper)
         result = _find_friend(WX_Windows=WX_Windows, Tel_Number=num, ErrorCount=Count)
-        _Carry_TXL(App_Object=WX_Windows, Hello_Str=msg,
+        # 如果失败就不用手动添加了
+        if result:
+            _Carry_TXL(App_Object=WX_Windows, Hello_Str=msg,
                    Tel_Number=num, notes=num_notes[num])
 
 
