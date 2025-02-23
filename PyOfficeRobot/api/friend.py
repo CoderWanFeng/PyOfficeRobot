@@ -191,7 +191,8 @@ def add(num_notes, msg):
     """:type : pywinauto.controls.uiawrapper.UIAWrapper"""
     WX_Wrapper.draw_outline(colour="red", thickness=5)
     # </editor-fold>
-
+    Button_ZD = WX_Windows.child_window(title='置顶')
+    Button_ZD.click_input()
     # <editor-fold desc="代码块 : 获取左侧按钮对象以及操作包装对象(合计:3对)">
     Button_LT = WX_Windows.child_window(title='聊天')
     Button_TXL = WX_Windows.child_window(title='通讯录')
@@ -211,7 +212,7 @@ def add(num_notes, msg):
         # 如果失败就不用手动添加了
         if result:
             _Carry_TXL(App_Object=WX_Windows, Hello_Str=msg,
-                   Tel_Number=num, notes=num_notes[num])
+                       Tel_Number=num, notes=num_notes[num])
 
 
 if __name__ == "__main__":
