@@ -8,10 +8,10 @@
 '''
 from time import sleep
 
-from pywinauto import ElementNotFoundError
 from pywinauto.application import *
 from pywinauto.base_wrapper import *
 from pywinauto.controls.uiawrapper import UIAWrapper
+from pywinauto.findwindows import ElementNotFoundError
 from pywinauto.keyboard import send_keys
 from pywinauto.uia_element_info import UIAElementInfo
 
@@ -32,10 +32,10 @@ def _Carry_TXL(App_Object, Hello_Str, Tel_Number, notes):
     Anchor_1 = None
     try:
         Anchor_1 = App_Object.child_window(title='发送添加朋友申请')
+        Anchor_1.draw_outline(colour='green', thickness=5)
     except ElementNotFoundError:
         # 直接添加上好久就返回
         return False
-    Anchor_1.draw_outline(colour='green', thickness=5)
     Anchor_1_Wrapper = Anchor_1.wrapper_object()
     Anchor_1_Wrapper_Parent = Anchor_1_Wrapper.element_info.parent
     Children_1 = Anchor_1_Wrapper_Parent.children()
