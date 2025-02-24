@@ -175,9 +175,10 @@ def add(num_notes, msg):
     Get_WeChat_Hwnd = lambda: win32gui.FindWindow("WeChatMainWndForPC", "微信")
     WeChat_Hwnd = Get_WeChat_Hwnd()
     # </editor-fold>
-
     # <editor-fold desc="代码块 : 设置窗口状态以及位置">
-    win32gui.ShowWindow(WeChat_Hwnd, 9)
+    win32gui.ShowWindow(WeChat_Hwnd, win32con.SW_RESTORE)
+    # 保证微信显示在窗口的最前面
+    win32gui.SetForegroundWindow(WeChat_Hwnd)
     # win32gui.SetWindowPos(WeChat_Hwnd, win32con.HWND_TOPMOST, 0,0,800,800, win32con.SWP_NOMOVE | win32con.SWP_NOACTIVATE| win32con.SWP_NOOWNERZORDER|win32con.SWP_SHOWWINDOW)
     win32gui.MoveWindow(WeChat_Hwnd, 1920 - 800, 0, 800, 800, True)
     print("Msg:窗口设置完毕")
