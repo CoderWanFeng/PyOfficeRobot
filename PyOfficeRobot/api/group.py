@@ -23,3 +23,5 @@ def send():
     # 初始化并展示我们的界面组件
     sys.exit(app.exec_())
     # 结束QApplication
+
+

@@ -1,6 +1,7 @@
 
 # demo
 .idea/
+*.idea/
 .gitee/
 node_modules
 .cache
