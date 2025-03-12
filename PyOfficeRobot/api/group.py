@@ -30,7 +30,7 @@ def send():
 
 
 
-def group_by_keywords(who: str, keywords: pd.DataFrame) -> None:
+def group_by_keywords(who: str, keywords: dict, match_type: str) -> None:
     wx.GetSessionList()  # 获取会话列表
     wx.ChatWith(who)  # 打开`who`聊天窗口
     last_processed_msg = None
@@ -38,25 +38,31 @@ def group_by_keywords(who: str, keywords: pd.DataFrame) -> None:
         time.sleep(3)
         last_msg = wx.MsgList.GetChildren()[-1].Name
         if last_msg and last_msg != last_processed_msg:
-            if last_msg not in keywords['回复内容'].values:
-                matched_replies = keywords[keywords['关键词'].apply(lambda x: x in last_msg)]['回复内容']
-                if not matched_replies.empty:
-                    for reply in matched_replies:
-                        wx.SendMsg(reply, who)
+            if last_msg not in keywords.values():
+                matched_reply = None
+                if match_type == 'exact':
+                    matched_reply = keywords.get(last_msg)
+                elif match_type == 'contains':
+                    matched_reply = next((value for key, value in keywords.items() if key in last_msg), None)
+                if matched_reply:
+                    wx.SendMsg(matched_reply, who)
                     last_processed_msg = last_msg
                 else:
-                    print("没有匹配的关键字")
+                    print(f"没有匹配的关键字,匹配类型：{match_type}")
             else:
                 print("最后一条消息是自动回复内容，跳过回复")
-
+        else:
+            print("没有新消息")
 
 
 
 if __name__ == "__main__":
-    data = {
-            '序号': ['0', '1', '2'],
-            '关键词': ["报名",  "学习",  "课程"],
-            '回复内容': ["你好，这是报名链接：www.这是报名链接.com",  "你好，这是学习链接：www.这是学习链接.com", "你好，这是课程链接：www.这是课程链接.com"]
-            }
-    keywords = pd.DataFrame(data)
-    group_by_keywords(who='测试群', keywords=keywords)
+    who = '测试群'
+    keywords = {
+        "报名": "你好，这是报名链接：www.这是报名链接.com",
+        "学习": "你好，这是学习链接：www.这是学习链接.com",
+        "课程": "你好，这是课程链接：www.这是课程链接.com"
+    }
+    match_type = 'contains'  # 关键字匹配类型 包含：contains  精确：exact
+    group_by_keywords(who=who, keywords=keywords , match_type=match_type)
+
