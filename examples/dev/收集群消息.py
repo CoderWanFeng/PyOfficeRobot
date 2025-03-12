@@ -8,4 +8,4 @@
 '''
 import PyOfficeRobot as pr
 
-pr.chat.receive_message(who='程序员晚枫', txt='userMessage.txt', output_path='./')
+pr.chat.receive_message(who='程序员晚枫', txt='userMessage.txt', output_path='/')
