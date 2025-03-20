@@ -9,14 +9,15 @@
 
 import sys
 import time
-import pandas as pd
-from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
+
 from PySide6.QtWidgets import QApplication
 
-from PyOfficeRobot.core.group.Start import MyWidget
-
 from PyOfficeRobot.core.WeChatType import WeChat
+from PyOfficeRobot.core.group.Start import MyWidget
+from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
+
 wx = WeChat()
+
 
 @instruction
 def send():
@@ -29,8 +30,20 @@ def send():
     # 结束QApplication
 
 
+def chat_by_keywords(who: str, keywords: dict, match_type: str) -> None:
+    """
+    根据关键词进行聊天回复。
 
-def group_by_keywords(who: str, keywords: dict, match_type: str) -> None:
+    Args:
+        who (str): 要与之聊天的群名。
+        keywords (dict): 匹配关键字的字典，键为关键词，值为回复内容。
+        match_type (str): 匹配类型，'exact' 表示完全匹配，'contains' 表示包含匹配。
+
+    Returns:
+        None
+
+    """
+
     wx.GetSessionList()  # 获取会话列表
     wx.ChatWith(who)  # 打开`who`聊天窗口
     last_processed_msg = None
@@ -55,14 +68,12 @@ def group_by_keywords(who: str, keywords: dict, match_type: str) -> None:
             print("没有新消息")
 
 
-
 if __name__ == "__main__":
     who = '测试群'
     keywords = {
-        "报名": "你好，这是报名链接：www.这是报名链接.com",
-        "学习": "你好，这是学习链接：www.这是学习链接.com",
-        "课程": "你好，这是课程链接：www.这是课程链接.com"
+        "报名": "你好，这是报名链接：www.python-office.com",
+        "学习": "你好，这是学习链接：www.python-office.com",
+        "课程": "你好，这是课程链接：www.python-office.com"
     }
     match_type = 'contains'  # 关键字匹配类型 包含：contains  精确：exact
-    group_by_keywords(who=who, keywords=keywords , match_type=match_type)
-
+    chat_by_keywords(who=who, keywords=keywords, match_type=match_type)
