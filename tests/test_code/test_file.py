@@ -11,7 +11,7 @@ keywords = {
 
 class TestFile(unittest.TestCase):
     def test_send_file(self):
-        send_file(who='文件传输助手', file=r'./test_files/0816.jpg')
+        send_file(who='文件传输助手', file=r'../test_files/0816.jpg')
 
     def test_chat_by_keyword(self):
         chat_by_keywords(who='程序员晚枫', keywords=keywords)
@@ -44,3 +44,16 @@ class TestFile(unittest.TestCase):
 
     def test_chat_ds(self):
         chat_by_deepseek(who='晚枫', api_key="sk-pRdhASKn0wm5i7DjkdDfj5ENbRcpsqGrtV7hdFZZ6laV5aMk")
+
+    def test_chat_zhipu(self):
+        chat_by_zhipu(who='绋嬪簭鍛樻櫄鏋?', key='')
+
+    def test_group_chat_by_keywords(self):
+        who = '测试群'
+        keywords = {
+            "报名": "你好，这是报名链接：www.python-office.com",
+            "学习": "你好，这是学习链接：www.python-office.com",
+            "课程": "你好，这是课程链接：www.python-office.com"
+        }
+        match_type = 'contains'  # 关键字匹配类型 包含：contains  精确：exact
+        chat_by_keywords(who=who, keywords=keywords, match_type=match_type)

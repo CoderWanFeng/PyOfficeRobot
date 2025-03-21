@@ -184,7 +184,7 @@ class WeChatBot:
                 logging.info("没有新消息或消息已处理")
 
 # 示例调用-需要创建的文件名，联系人名称
-bot = WeChatBot('InfoData.xlsx','测试群2')
+bot = WeChatBot('InfoData.xlsx', '测试群2')
 if bot.wx:
     bot.select_conversation()
     bot.process_messages()
