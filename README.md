@@ -84,7 +84,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 
 <p align="center" id='开源交流群-banner'>
 <a target="_blank" href='https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office.jpg'>
-<img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/python-office-qr.jpg" width="100%"/>
+<img src="https://python-office-1300615378.cos.ap-chongqing.myqcloud.com/group/python-office-qr.jpg" width="100%"/>
 </a> 
 </p>
 
