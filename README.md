@@ -46,6 +46,8 @@
 pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 ```
 
+目前不支持最新版微信，支持的微信版本时3.9，下载链接：[https://pan.quark.cn/s/f32e9b832284](https://pan.quark.cn/s/f32e9b832284)
+
 ## 2、功能演示
 
 - ⭐本机器人使用完全免费，全部功能的演示视频，扫码下图直达👇 +
