@@ -1,11 +1,5 @@
 # -*- coding: UTF-8 -*-
-'''
-@作者 ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫
-@读者群     ：http://www.python4office.cn/wechat-group/
-@个人网站 ：www.python-office.com
-@Date    ：2023/4/27 21:50 
-@Description     ：
-'''
+
 
 import sys
 import time
@@ -66,6 +60,10 @@ def chat_by_keywords(who: str, keywords: dict, match_type: str) -> None:
                 print("最后一条消息是自动回复内容，跳过回复")
         else:
             print("没有新消息")
+
+
+def collect_msg():
+    pass
 
 
 if __name__ == "__main__":
