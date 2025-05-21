@@ -76,11 +76,6 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 
 - [演示代码](https://github.com/CoderWanFeng/PyOfficeRobot/tree/main/demo)
 
-## 4、开发者
-
-| 昵称 | 贡献                    | 时间             |
-|----|-----------------------|----------------|
-| 雷杰 | 解决了微信更新后，不能发送消息和文件的问题 | 2023/7/6 00：30 |
 
 ---
 
@@ -93,52 +88,6 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 ## ⭐Star
 
 [![Stargazers over time](https://starchart.cc/CoderWanFeng/PyOfficeRobot.svg)](https://starchart.cc/CoderWanFeng/PyOfficeRobot)
-
-## 📕拓展资料
-
-<p align="center" id='30讲自动化办公-banner'>
-    <a target="_blank" href='https://www.python-office.com/video/video.html'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fauto-work.jpg" width="100%"/>
-    </a>   
-</p>
-
-<p align="center" id='100本电子书-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/6bM_3tROqdY_2WbBShzqyw'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Febook.jpg" width="100%"/>
-    </a>   
-</p>
-
-<p align="center" id='实战项目-banner'>
-    <a target="_blank" href='http://www.python4office.cn/python-project-list/'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fproject.jpg" width="100%"/>
-    </a>   
-</p>
-
-<p align="center" id='11个软件-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/w9ITodQR3kzSXc4t1H92nw'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fsoft-11.jpg" width="100%"/>
-    </a>   
-</p>
-
-
-<p align="center" id='25个学习资源-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/-mlsV7PFc27JElOTCskMsg'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/%E5%BC%95%E5%AF%BC%E8%B6%85%E9%93%BE%E6%8E%A5%2Fpy-25-source.jpg" width="100%"/>
-    </a>   
-</p>
-
-<p align="center" id='支付宝-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/TSnAjBs2dILSI_pM1pPznQ'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/ads%2F%E8%81%94%E7%9B%9F%E5%B9%BF%E5%91%8A%2Falipay.jpg" width="100%"/>
-    </a>   
-</p>
-
-
-<p align="center" id='外卖-banner'>
-    <a target="_blank" href='https://mp.weixin.qq.com/s/fdQ0TbTocPvw-DAMsFUlVg'>
-    <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/ads%2F%E8%81%94%E7%9B%9F%E5%B9%BF%E5%91%8A%2F%E5%A4%96%E5%8D%96-1040-100.jpg" width="100%"/>
-    </a>   
-</p>
 
 ## 致谢项目
 

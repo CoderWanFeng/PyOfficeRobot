@@ -3,6 +3,7 @@ import unittest
 from PyOfficeRobot.api import file, group
 from PyOfficeRobot.api.chat import *
 from PyOfficeRobot.api.file import *
+from PyOfficeRobot.api.group import *
 
 keywords = {
     '你好': "在干嘛？"
@@ -57,3 +58,11 @@ class TestFile(unittest.TestCase):
         }
         match_type = 'contains'  # 关键字匹配类型 包含：contains  精确：exact
         chat_by_keywords(who=who, keywords=keywords, match_type=match_type)
+
+    def test_collect_msg(self):
+        who = '✨python-office开源小组'
+        output_excel_path = 'userMessage.xlsx'
+        output_path = './'
+        names = ['程序员晚枫']
+        scroll_num = 6
+        collect_msg(who=who, output_excel_path=output_excel_path, output_path=output_path, names=names, scroll_num=scroll_num)
