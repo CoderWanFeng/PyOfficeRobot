@@ -1,11 +1,11 @@
 # -*- coding: UTF-8 -*-
-
-
 import sys
 import time
 import pandas as pd
 import win32api
 import win32con
+
+from PySide6.QtWidgets import QApplication
 
 from pathlib import Path
 from loguru import logger
