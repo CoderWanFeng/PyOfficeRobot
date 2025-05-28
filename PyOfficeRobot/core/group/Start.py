@@ -13,7 +13,7 @@
 import sys
 import threading
 
-import xlrd
+from openpyxl import load_workbook
 from PySide6.QtCore import QStringListModel, QModelIndex
 from PySide6.QtWidgets import QApplication, QWidget
 from PySide6.QtWidgets import QFileDialog
@@ -51,28 +51,28 @@ class MyWidget(QWidget):
             print(self.model.index(_).data())
 
     def OnPushbutton_load_Cliked(self):
-
         self.groupslist.clear()
 
-        self.groupslistfilename = QFileDialog.getOpenFileName(caption='选择群发列表', filter='*.xls')[0]
+        self.groupslistfilename = QFileDialog.getOpenFileName(caption='选择群发列表', filter='*.xlsx')[0]
         self.sendtextfilename = QFileDialog.getOpenFileName(caption='选择群发的文本', filter='*.txt')[0]
 
         # <editor-fold desc="代码段 ： 设置群发好友列表">
-        work = xlrd.open_workbook(filename=self.groupslistfilename)
-        sheet = work.sheet_by_index(0)
-        for _ in range(sheet.nrows):
-            itme = sheet.cell_value(_, 0)
-            state = sheet.cell_value(_, 1)
+        wb = load_workbook(filename=self.groupslistfilename)
+        sheet = wb.active
+        rows = sheet.max_row
 
-            if state == "True":
-                if itme != '':
-                    self.groupslist.append(sheet.cell_value(_, 0))
+        for _ in range(1, rows + 1):
+            itme = sheet.cell(row=_, column=1).value
+            state = sheet.cell(row=_, column=2).value
+
+            if str(state) == "True":
+                if itme:
+                    self.groupslist.append(str(itme))
         # </editor-fold>
 
         # <editor-fold desc="代码段 ：设置群发文本">
-        file = open(file=self.sendtextfilename, encoding='utf-8')
-        for _ in file.readlines():
-            self.sendtext = self.sendtext + _ + '{ctrl}{ENTER}'
+        with open(file=self.sendtextfilename, encoding='utf-8') as file:
+            self.sendtext = '{ctrl}{ENTER}'.join(file.readlines())
         # </editor-fold>
 
         # <editor-fold desc="代码段 : 设置群发列表到ui">
