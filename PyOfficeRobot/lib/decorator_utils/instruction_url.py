@@ -25,6 +25,7 @@ chat_dict = {
 }
 file_dict = {
     "send_file": "https://www.bilibili.com/video/BV1S84y1m7xd?p=4",
+    "send_file_by_time": "https://www.bilibili.com/video/BV1S84y1m7xd?p=7",
 
 }
 

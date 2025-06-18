@@ -8,3 +8,8 @@
 '''
 import PyOfficeRobot
 
+# 定时发送文字信息
+# PyOfficeRobot.chat.send_message_by_time(who='Yaaakaaang', message='这是定时自动发送的信息', time='15:51:00')
+
+# 定时发送文件
+PyOfficeRobot.file.send_file_by_time(who='Yaaakaaang', file=r'003-根据关键词回复.py', send_time='11:40:10')
