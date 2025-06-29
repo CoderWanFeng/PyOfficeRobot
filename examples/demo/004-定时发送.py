@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 '''
-@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫，微信：CoderWanFeng
+@作者  ：B站/抖音/微博/小红书/公众号，都叫：程序员晚枫，微信：python-office
 @读者群     ：http://www.python4office.cn/wechat-group/
 @学习网站      ：https://www.python-office.com
 @Date    ：2023/2/13 21:19

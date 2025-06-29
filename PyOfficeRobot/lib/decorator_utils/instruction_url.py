@@ -15,9 +15,9 @@ from functools import wraps
 from PyOfficeRobot.lib.CONST import SPLIT_LINE
 
 chat_dict = {
-    "send_message": "https://www.bilibili.com/video/BV1S84y1m7xd?p=3",
-    "chat_by_keywords": "https://www.bilibili.com/video/BV1S84y1m7xd?p=5",
-    "send_message_by_time": "https://www.bilibili.com/video/BV1S84y1m7xd?p=7",
+    "send_message": "https://www.bilibili.com/video/BV1nr7DzuEn7",
+    "chat_by_keywords": "https://www.bilibili.com/video/BV1Z77ezSEJw",
+    "send_message_by_time": "https://www.bilibili.com/video/BV1nc7DziEPL",
     "chat_by_gpt": "https://www.bilibili.com/video/BV1S84y1m7xd?p=11",
     "chat_robot": "https://www.bilibili.com/video/BV1S84y1m7xd?p=11",
     "chat_ali": "https://mp.weixin.qq.com/s/SfNA34bC6wMLRaKONfOWhw",
@@ -30,7 +30,7 @@ file_dict = {
 }
 
 friend_dict = {
-    "add": "https://www.bilibili.com/video/BV1S84y1m7xd?p=9",
+    "add": "https://www.bilibili.com/video/BV1dKTtzqE6D",
 
 }
 
