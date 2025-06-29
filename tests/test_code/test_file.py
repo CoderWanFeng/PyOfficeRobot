@@ -66,3 +66,7 @@ class TestFile(unittest.TestCase):
         names = ['程序员晚枫']
         scroll_num = 6
         collect_msg(who=who, output_excel_path=output_excel_path, output_path=output_path, names=names, scroll_num=scroll_num)
+
+    def test_send_file_by_time(self):
+
+        send_file_by_time(who='Yaaakaaang', file=r'../__init__.py', send_time='11:51:00')

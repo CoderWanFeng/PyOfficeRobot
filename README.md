@@ -12,6 +12,9 @@
 
 
 <p align="center" name="'github">
+    <a target="_blank" href='https://gitcode.com/python4office/PyOfficeRobot'>
+    <img src="https://gitcode.com/python4office/pobd/star/badge.svg" alt="gitcode star"/>
+    </a>  
     <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
     <img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg?style=social" alt="github star"/>
     </a>

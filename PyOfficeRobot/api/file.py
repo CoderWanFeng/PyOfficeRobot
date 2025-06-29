@@ -1,8 +1,10 @@
 from PyOfficeRobot.core.WeChatType import WeChat
 from PyOfficeRobot.lib.decorator_utils.instruction_url import instruction
 
-wx = WeChat()
+import schedule
+import time
 
+wx = WeChat()
 
 # @act_info(ACT_TYPE.FILE)
 @instruction
@@ -19,6 +21,13 @@ def send_file(who: str, file: str):
 
     # 注：为保证发送文件稳定性，首次发送文件可能花费时间较长，后续调用会缩短发送时间
 
+@instruction
+def send_file_by_time(who: str, file: str, send_time: str):
+    schedule.every().day.at(send_time).do(send_file, who=who, file=file)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)  # 避免CPU占用过高
 
 import uiautomation as ui_CoderWanFeng
 
