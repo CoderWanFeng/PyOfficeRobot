@@ -54,7 +54,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 ## 2、功能演示
 
 - ⭐本机器人使用完全免费，全部功能的演示视频，扫码下图直达👇 +
-  项目源码：[Github](https://gitee.com/CoderWanFeng/PyOfficeRobot/demo)、[gitee](https://gitee.com/CoderWanFeng/PyOfficeRobot)
+  项目源码：[GitCode](https://gitcode.com/python4office/PyOfficeRobot)、[Github](https://gitee.com/CoderWanFeng/PyOfficeRobot/demo)、[gitee](https://gitee.com/CoderWanFeng/PyOfficeRobot)
 
 <p align="center" id='10讲机器人-banner'>
     <a target="_blank" href='https://www.python-office.com/course-002/10-PyOfficeRobot/10-PyOfficeRobot.html'>
