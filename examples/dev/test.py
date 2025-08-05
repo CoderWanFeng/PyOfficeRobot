@@ -10,3 +10,4 @@ import porobot
 
 reply_msg = porobot.normal.chat('你叫什么名字？')
 print(reply_msg)
+
