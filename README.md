@@ -12,8 +12,8 @@
 
 
 <p align="center" name="'github">
-    <a target="_blank" href='https://gitcode.com/python4office/PyOfficeRobot'>
-    <img src="https://gitcode.com/python4office/pobd/star/badge.svg" alt="gitcode star"/>
+    <a target="_blank" href='https://atomgit.com/python4office/PyOfficeRobot'>
+    <img src="https://atomgit.com/python4office/pobd/star/badge.svg" alt="atomgit star"/>
     </a>  
     <a target="_blank" href='https://github.com/CoderWanFeng/PyOfficeRobot'>
     <img src="https://img.shields.io/github/stars/CoderWanFeng/PyOfficeRobot.svg?style=social" alt="github star"/>
@@ -25,8 +25,8 @@
 	<img src="https://img.shields.io/badge/QQ-163434413-orange"/>
   </a>
     	<a href="http://www.python4office.cn/wechat-group/">
-	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
-  </a>
+  <img src="https://img.shields.io/badge/加入-AI交流群-brightgreen" alt="AI交流群">
+</a>
 
 </p>
 
@@ -60,7 +60,7 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
 ## 2、功能演示
 
 - ⭐本机器人使用完全免费，全部功能的演示视频，扫码下图直达👇 +
-  项目源码：[GitCode](https://gitcode.com/python4office/PyOfficeRobot)、[Github](https://gitee.com/CoderWanFeng/PyOfficeRobot/demo)、[gitee](https://gitee.com/CoderWanFeng/PyOfficeRobot)
+  项目源码：[atomgit](https://atomgit.com/python4office/PyOfficeRobot)、[Github](https://gitee.com/CoderWanFeng/PyOfficeRobot/demo)、[gitee](https://gitee.com/CoderWanFeng/PyOfficeRobot)
 
 <p align="center" id='10讲机器人-banner'>
     <a target="_blank" href='https://www.python-office.com/course-002/10-PyOfficeRobot/10-PyOfficeRobot.html'>
