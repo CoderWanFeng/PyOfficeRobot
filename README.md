@@ -1,13 +1,16 @@
-<p align="center" id='大礼包-banner'>
-    <a target="_blank" href='http://python4office.cn/fuli/fuli-source-0726/'>
-    <img src="https://banner-1300615378.cos.ap-guangzhou.myqcloud.com/%E6%A8%AA%E6%9D%A1/Python%E5%A4%A7%E7%A4%BC%E5%8C%85.jpg" width="100%"/>
+
+<p align="center" id='进群-banner-AI'>
+    <a target="_blank" href='https://www.python4office.cn/wechat-group/'>
+    <img src="https://raw.atomgit.com/user-images/assets/5027920/87fc1ca4-1a6c-47b8-b234-3e323a1aa827/aiq.jpg" width="100%"/>
     </a>   
 </p>
+
+
 <p align="center">
 	👉 <a target="_blank" href="https://www.python-office.com/office/robot.html">项目官网</a> 👈
 </p>
 <p align="center">
-	👉 <a target="_blank" href="http://www.python4office.cn/wechat-group/">本开源项目的交流群</a> 👈
+	👉 <a target="_blank" href="https://www.python4office.cn/wechat-group/">本开源项目的交流群</a> 👈
 </p>
 
 
@@ -24,7 +27,7 @@
   	<a href="https://mp.weixin.qq.com/s/yaSmFKO3RrBpyanW3nvRAQ">
 	<img src="https://img.shields.io/badge/QQ-163434413-orange"/>
   </a>
-    	<a href="http://www.python4office.cn/wechat-group/">
+    	<a href="https://www.python4office.cn/wechat-group/">
 	<img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1-%E4%BA%A4%E6%B5%81%E7%BE%A4-brightgreen"/>
   </a>
 
@@ -63,12 +66,12 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ PyOfficeRobot -U
   项目源码：[GitCode](https://gitcode.com/python4office/PyOfficeRobot)、[Github](https://gitee.com/CoderWanFeng/PyOfficeRobot/demo)、[gitee](https://gitee.com/CoderWanFeng/PyOfficeRobot)
 
 <p align="center" id='10讲机器人-banner'>
-    <a target="_blank" href='https://www.python-office.com/course-002/10-PyOfficeRobot/10-PyOfficeRobot.html'>
+    <a target="_blank" href='https://mp.weixin.qq.com/s/j8C-AsOGGM43vA0hXoCawg'>
     <img src="https://website-python-1300615378.cos.ap-nanjing.myqcloud.com/course/10%E8%AE%B2%E6%9C%BA%E5%99%A8%E4%BA%BA-%E6%A8%AA.jpg" width="100%"/>
     </a>   
 </p>
 
-> 持续更新中，交流群：[点我加入](http://www.python4office.cn/wechat-group/)
+> 持续更新中，交流群：[点我加入](https://www.python4office.cn/wechat-group/)
 
 #### 微信机器人-其它实现方式
 
